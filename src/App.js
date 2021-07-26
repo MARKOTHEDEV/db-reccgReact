@@ -1,11 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route, Switch } from "react-router-dom";
+import Layout from "./Components/Layout";
+import About from "./Pages/About";
+import Contact from "./Pages/Contact";
+import Home from "./Pages/Home";
+// import Portfolio from "./Pages/Portfolio";
+// import Services from "./Pages/Services";
 
 function App() {
   return (
-    <div className="text-center">
-         hello
-    </div>
+   <Layout>
+     <Switch>
+       <Route exact path="/" component={Home}/>
+       <Route path="/about" component={About}/>
+       {/* <Route path="/services" component={Services}/> */}
+       {/* <Route path="/portfolio" component={Portfolio}/> */}
+       {/* <Route path="/contact" component={Contact}/> */}
+       
+     </Switch>
+   </Layout>
   );
 }
 

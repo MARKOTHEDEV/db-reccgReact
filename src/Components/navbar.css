@@ -1,0 +1,129 @@
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 5rem;
+  z-index: 100;
+  background: #1b1515;
+}
+
+.logo {
+  font-size: 28px;
+  padding-bottom: 5px;
+}
+
+.nav-menu {
+  display: flex;
+  justify-content: flex-end;
+  list-style: none;
+  width: 70%;
+}
+
+.nav_link,
+.apply {
+  text-decoration: none;
+  color: #e5e5e5;
+  font-size: 1.063rem;
+  padding: 0 0.625rem;
+  margin: 0 0.375rem;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.nav_link::after {
+  content: "";
+  width: 0%;
+  height: 2px;
+  display: block;
+  background-color: #e5e5e5;
+  margin-top: 7px;
+  transition: all 0.3s;
+}
+
+.nav_link:hover::after,
+.nav_link.is-active::after {
+  width: 100%;
+  transition: all 0.3s;
+}
+
+.apply {
+  border: 1px solid var(--secondary);
+  border-radius: 50px;
+  background: #e5e5e5;
+  color: var(--primary);
+ padding-top: 2px;
+}
+
+.apply:hover {
+  background: transparent;
+  color: var(--primary);
+  transition: all 0.4s ease;
+}
+
+.mobile-menu-icon {
+  display: none;
+}
+
+@media (max-width: 1200px) {
+  .logo {
+    display: flex;
+    position: absolute;
+    top: 12px;
+    left: 26px;
+  }
+
+  .nav-menu {
+    transform: translateX(1000px);
+    top: 75px;
+    position: absolute;
+    overflow: hidden;
+    z-index: 99999 !important;
+  }
+
+  .nav-links-mobile {
+    position: absolute;
+    display: block;
+    list-style: none;
+    background: var(--primary);
+    right: 0;
+    top: 4rem;
+    transition: all 0.5s ease-out;
+    width: 100%;
+    transform: translateX(0);
+    z-index: 99999 !important;
+    height: 100vh;
+  }
+
+  .nav_link,
+  .apply {
+    text-align: center;
+    padding: 2rem;
+    width: 100%;
+    color: #fff;
+    text-transform: uppercase;
+  }
+
+  .apply {
+    border: none;
+    background: none;
+    color: #fff !important;
+  }
+
+  .mobile-menu-icon {
+    display: block;
+    position: absolute;
+    font-size: 30px;
+    color: #fff;
+    top: 12px;
+    right: 25px;
+    cursor: pointer;
+  }
+}
+
+@media (max-width: 500px) {
+  .logo {
+    font-size: 1.3rem;
+    position: absolute;
+    top: 15px;
+  }
+}
