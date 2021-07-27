@@ -31,7 +31,7 @@ const Navbar = () => {
         </NavLink>
         <NavLink to="/about" className="nav_link" activeClassName="is-active">
           {" "}
-          <li>About</li>{" "}
+          <li>About us</li>{" "}
         </NavLink>
         <NavLink
           to="/resources"
@@ -41,19 +41,16 @@ const Navbar = () => {
           {" "}
           <li>Resources</li>{" "}
         </NavLink>
-        <NavLink to="/Events" className="nav_link" activeClassName="is-active">
+        <NavLink to="/events" className="nav_link" activeClassName="is-active">
           {" "}
           <li>Events</li>{" "}
         </NavLink>
-        <NavLink to="/Contact" className="nav_link" activeClassName="is-active">
-          {" "}
-          <li>Contact</li>{" "}
-        </NavLink>
-
         <NavLink to="/contact" className="nav_link" activeClassName="is-active">
           {" "}
           <li>Contact</li>{" "}
         </NavLink>
+
+       
         <NavLink
           to="/location"
           className="nav_link"
@@ -66,9 +63,13 @@ const Navbar = () => {
           {" "}
           <li>Live stream</li>{" "}
         </NavLink>
+        <li className="border-l-2 border-gray-300 nav_link hidden xl:flex"></li>
+        <li className="hidden xl:flex">
+          <i className="fas fa-search text-gray-300 pt-2 cursor-pointer"></i>
+        </li>
       </ul>
       <div
-        className="mobile-menu-icon md:pr-12"
+        className="mobile-menu-icon md:pr-12 pt-1"
         onClick={() => setIsMobile(!isMobile)}
       >
         {isMobile ? (
