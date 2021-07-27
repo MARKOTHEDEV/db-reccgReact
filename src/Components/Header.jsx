@@ -12,7 +12,7 @@ const Header = ({ bgImage, homeTitle, homeDesc }) => {
             <div className="grid grid-cols-1 lg:grid-cols-2">
                  <div>
                  <h2 className="font-black text-2xl md:text-4xl">{homeTitle}</h2>
-            <p className="font-semibold tracking-wider text-base">{homeDesc}</p>
+            <p className="font-semibold tracking-wider text-base text-center">{homeDesc}</p>
                  </div>
             </div>
      </div>
