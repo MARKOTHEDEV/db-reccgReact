@@ -6,9 +6,9 @@ import logo from "../Images/logo.png";
 const Navbar = () => {
   const [isMobile, setIsMobile] = useState(false);
   return (
-    <nav className="navbar w-full">
+    <nav className="navbar fixed top-0 w-full">
       <div className="flex items-center logo">
-        <img src={logo} alt="logo" className="h-14 rounded-full" />
+        <img src={logo} alt="logo" className="h-14 rounded-full"/>
         <h3
           className="uppercase font-medium md:pl-2 hidden lg:flex text-sm"
           style={{ color: "#e5e5e5" }}
