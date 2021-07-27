@@ -29,11 +29,18 @@ body {
 
 /*== Home page ===*/
 .intro {
-  height: 80vh;
+  height: 70vh;
   width: 100%;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   background-image: url(./Images/introBg.png);
+  object-fit: cover;
+}
+
+.hBox {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
