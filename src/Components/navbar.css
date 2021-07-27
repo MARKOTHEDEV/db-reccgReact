@@ -95,11 +95,6 @@ nav {
     transition: all 0.3s;
   }
   
-  .nav_link:hover::after,
-  .nav_link.is-active::after {
-    width: 100%;
-    transition: all 0.3s;
-  }
 
   .nav-links-mobile {
     position: absolute;
@@ -145,6 +140,6 @@ nav {
 @media (max-width: 500px) {
   .logo {
     position: absolute;
-    top: 15px;
+    top: 14px;
   }
 }
