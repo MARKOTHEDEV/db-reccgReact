@@ -99,7 +99,12 @@ const Home = () => {
             <div>
               <div
                 className="text-center px-12 py-10 text-white rounded-xl"
-                style={{ background: `url(${belief})`, backgroundRepeat: "no-repeat", backgroundPosition: "center", backgroundSize: "cover"  }}
+                style={{
+                  background: `url(${belief})`,
+                  backgroundRepeat: "no-repeat",
+                  backgroundPosition: "center",
+                  backgroundSize: "cover",
+                }}
               >
                 <h3 className="pb-5 font-semibold text-2xl">Church Belief</h3>
                 <p className="pb-6">
@@ -121,7 +126,7 @@ const Home = () => {
       <div className="py-16 mt-14" style={{ backgroundColor: "#FF4370" }}>
         <div className="myContainer">
           <h2 className="pb-7 font-bold text-2xl">SERMONS</h2>
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-y-6 gap-x-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-6 gap-x-16">
             <Sermon
               topic="let there be light"
               bText="Genesis 1:1-3"
@@ -142,7 +147,7 @@ const Home = () => {
       </div>
 
       {/* Publication */}
-      <div className="my-10" style={{ backgroundColor: "#ef295738" }}>
+      <div className="my-16" style={{ backgroundColor: "#ef295738" }}>
         <div className="myContainer">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 bg-gray-400">
             <div>
@@ -253,7 +258,12 @@ function HomeBox({ bImage, bTitle, bDes }) {
   return (
     <div
       className="text-center px-12 py-10 text-white"
-      style={{ background: `url(${bImage})`, backgroundRepeat: "no-repeat", backgroundPosition: "center", backgroundSize: "cover" }}
+      style={{
+        background: `url(${bImage})`,
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "center",
+        backgroundSize: "cover",
+      }}
     >
       <h3 className="pb-5 font-semibold text-2xl">{bTitle}</h3>
       <p className="pb-6">{bDes}</p>
