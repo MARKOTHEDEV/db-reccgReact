@@ -61,7 +61,9 @@ body {
 
 
 /* == About page ===*/
-
+.about li {
+  margin-top: 7px;
+}
 
 
 /*=== FOOTER ===*/
