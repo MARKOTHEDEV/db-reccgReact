@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
-import BackToTop from "./BackToTop";
-import Footer from "./Footer";
+// import BackToTop from "./BackToTop";
+// import Footer from "./Footer";
 import StartTop from "./StartTop";
 
 const propTypes = {
