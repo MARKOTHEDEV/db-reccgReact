@@ -241,8 +241,6 @@ const Home = () => {
           </div>
         </div>
       </div>
-
-      <div className="mt-32"></div>
     </div>
   );
 };

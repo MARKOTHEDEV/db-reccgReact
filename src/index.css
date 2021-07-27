@@ -10,13 +10,43 @@
   --secondary: #62A2B0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Poppins" sans-serif;
+ 
 }
 
 .myContainer {
   @apply container w-full mx-auto lg:px-8 md:px-6 px-5;
 }
+
+/* BACK TO TOP */
+.scroll-to-top {
+  bottom: 13px;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  z-index: 200;
+}
+
+.scroll-to-top .icon2 {
+  margin-top: 10px;
+  color: wheat !important;
+  animation: scrollTop 0.5s alternate ease infinite;
+}
+
+@keyframes scrollTop {
+  from {
+    transform: translateY(2px);
+  }
+  to {
+    transform: translateY(-1px);
+  }
+}
+
 
 .header {
   height: 100vh;
@@ -42,9 +72,5 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-}
-
-.test {
-  background: #ef295738;
 }
 
