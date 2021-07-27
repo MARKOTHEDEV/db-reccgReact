@@ -33,32 +33,33 @@ const Navbar = () => {
           <li>About</li>{" "}
         </NavLink>
         <NavLink
-          to="/academics"
+          to="/resources"
           className="nav_link"
           activeClassName="is-active"
         >
           {" "}
-          <li>Academics</li>{" "}
+          <li>Resources</li>{" "}
         </NavLink>
         <NavLink
-          to="/admission"
+          to="/Events"
           className="nav_link"
           activeClassName="is-active"
         >
           {" "}
-          <li>Admission</li>{" "}
+          <li>Events</li>{" "}
         </NavLink>
-        <NavLink to="/Gallery" className="nav_link" activeClassName="is-active">
+        <NavLink to="/Contact" className="nav_link" activeClassName="is-active">
           {" "}
-          <li>Gallery</li>{" "}
+          <li>Contact</li>{" "}
         </NavLink>
-        <NavLink to="/payFees" className="nav_link" activeClassName="is-active">
-          {" "}
-          <li>Pay-Fees</li>{" "}
-        </NavLink>
+        
         <NavLink to="/contact" className="nav_link" activeClassName="is-active">
           {" "}
           <li>Contact</li>{" "}
+        </NavLink>
+        <NavLink to="/location" className="nav_link" activeClassName="is-active">
+          {" "}
+          <li>Location</li>{" "}
         </NavLink>
         <NavLink to="/apply" className="apply">
           {" "}
