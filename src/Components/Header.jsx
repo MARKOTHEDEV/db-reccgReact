@@ -4,7 +4,7 @@ import Navbar from "./Navbar";
 const Header = ({ bgImage, homeTitle, homeDesc }) => {
   return (
     <div
-      className="h-screen w-full flex flex-col justify-between py-12"
+      className="header w-full flex flex-col justify-between py-12"
       style={{ background: `url(${bgImage})`, backgroundRepeat: "no-repeat", backgroundPosition: "center", backgroundSize: "cover" }}
     >
       <div className="">
@@ -12,10 +12,10 @@ const Header = ({ bgImage, homeTitle, homeDesc }) => {
       </div>
 
       <div className="myContainer text-white">
-        <div className="grid grid-cols-1 lg:grid-cols-2">
+        <div className="grid grid-cols-1 lg:grid-cols-2 text-left">
           <div>
-            <h2 className="font-black text-2xl md:text-4xl">{homeTitle}</h2>
-            <p className="font-semibold tracking-wider text-base text-center">
+            <h2 className="font-black text-2xl md:text-4xl pb-2">{homeTitle}</h2>
+            <p className="font-semibold tracking-wider text-base">
               {homeDesc}
             </p>
           </div>

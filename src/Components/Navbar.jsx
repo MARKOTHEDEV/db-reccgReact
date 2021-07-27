@@ -7,7 +7,7 @@ const Navbar = () => {
   const [isMobile, setIsMobile] = useState(false);
   return (
     <nav className="navbar fixed top-10 w-full">
-      <div className="flex items-center logo">
+      <NavLink to="/" className="flex items-center logo">
         <img src={logo} alt="logo" className="h-14 rounded-full"/>
         <h3
           className="uppercase font-medium md:pl-2 hidden lg:flex text-sm"
@@ -15,7 +15,7 @@ const Navbar = () => {
         >
           House <br /> of his <br /> presence
         </h3>
-      </div>
+      </NavLink>
       <ul
         className={isMobile ? "nav-links-mobile" : "nav-menu"}
         onClick={() => setIsMobile(false)}

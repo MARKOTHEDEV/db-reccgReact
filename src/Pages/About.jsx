@@ -111,7 +111,7 @@ const About = () => {
             </ul>
 
             <div className="flex justify-end">
-              <button className="border font-semibold px-5 py-2 text-white">
+              <button className="border font-semibold px-5 py-2 text-white mt-4">
                 Read more
               </button>
             </div>

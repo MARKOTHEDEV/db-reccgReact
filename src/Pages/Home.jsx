@@ -158,7 +158,7 @@ const Home = () => {
               </div>
               <div className="flex flex-col">
                 <div
-                  className="bg-cover bg-center bg-no-repeat flex justify-center items-center p-28"
+                  className="bg-cover bg-center bg-no-repeat flex justify-center items-center py-28"
                   style={{ backgroundImage: `url(${event1})` }}
                 >
                   <Link
@@ -169,7 +169,7 @@ const Home = () => {
                   </Link>
                 </div>
                 <div
-                  className="bg-cover bg-center bg-no-repeat mt-5 flex justify-center items-center p-28"
+                  className="bg-cover bg-center bg-no-repeat mt-5 flex justify-center items-center py-28"
                   style={{ backgroundImage: `url(${event2})` }}
                 >
                   {" "}

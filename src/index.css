@@ -46,7 +46,16 @@ body {
   }
 }
 
+/* header */
+.header {
+  height: 100vh;
+}
 
+@media screen and (max-width: 768px) {
+  .header {
+    height: 80vh;
+  }
+}
 
 /*== Home page ===*/
 .intro {
@@ -59,12 +68,10 @@ body {
   object-fit: cover;
 }
 
-
 /* == About page ===*/
 .about li {
   margin-top: 7px;
 }
-
 
 /*=== FOOTER ===*/
 .footer_link::after {
@@ -81,5 +88,4 @@ body {
 .footer_link.is-active::after {
   width: 100%;
   transition: all 0.3s;
-
 }
