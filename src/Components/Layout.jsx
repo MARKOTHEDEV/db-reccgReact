@@ -10,7 +10,7 @@ const propTypes = {
 const Layout = ({ children }) => {
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       {/* <BackToTop /> */}
       <StartTop />
       <main>{children}</main>

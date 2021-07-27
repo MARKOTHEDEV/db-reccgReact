@@ -20,6 +20,6 @@ body {
 
 /*== header ==*/
 .header {
-  height: calc(100vh - 5rem);
-  background: red;
+  height: 100vh;
+  width: 100%;
 }
