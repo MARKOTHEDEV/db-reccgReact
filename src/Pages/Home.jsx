@@ -197,7 +197,7 @@ const Home = () => {
 
       {/* contact */}
       <div className="myContainer">
-        <div className="grid grid-cols-1 md:grid-cols-3">
+        <div className="grid grid-cols-1 lg:grid-cols-3">
           <div className="bg-primary py-5 px-5 text-white font-semibold">
             <h4>
               <span className="block pb-2 text-2xl">Contact Us</span> 5151 S

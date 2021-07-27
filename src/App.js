@@ -3,6 +3,7 @@ import Layout from "./Components/Layout";
 import About from "./Pages/About";
 // import Contact from "./Pages/Contact";
 import Home from "./Pages/Home";
+import NotFoundPage from "./Pages/NotFoundPage";
 // import Portfolio from "./Pages/Portfolio";
 // import Services from "./Pages/Services";
 
@@ -15,7 +16,7 @@ function App() {
        {/* <Route path="/services" component={Services}/> */}
        {/* <Route path="/portfolio" component={Portfolio}/> */}
        {/* <Route path="/contact" component={Contact}/> */}
-       
+       <Route><NotFoundPage/></Route>
      </Switch>
    </Layout>
   );
