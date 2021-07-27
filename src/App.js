@@ -2,6 +2,7 @@ import { Route, Switch } from "react-router-dom";
 import Layout from "./Components/Layout";
 import About from "./Pages/About";
 import Departments from "./Pages/Departments";
+import Events from "./Pages/Events";
 import Home from "./Pages/Home";
 import NotFoundPage from "./Pages/NotFoundPage";
 import Resources from "./Pages/Resources";
@@ -15,7 +16,7 @@ function App() {
        <Route path="/about" component={About}/>
        <Route path="/resources" component={Resources}/>
        <Route path="/departments" component={Departments}/>
-       {/* <Route path="/contact" component={Contact}/> */}
+       <Route path="/events" component={Events}/>
        <Route><NotFoundPage/></Route>
      </Switch>
    </Layout>

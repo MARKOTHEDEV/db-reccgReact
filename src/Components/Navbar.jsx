@@ -27,8 +27,9 @@ const Navbar = () => {
           exact={true}
         >
           {" "}
-          <li>Home</li>{" "}
+          <li>Home</li>
         </NavLink>
+        
         <NavLink to="/about" className="nav_link" activeClassName="is-active">
           {" "}
           <li>About us</li>{" "}

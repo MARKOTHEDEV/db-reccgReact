@@ -201,7 +201,7 @@ const Home = () => {
       </div>
 
       {/* contact */}
-      <div className="myContainer">
+      <div className="myContainer" id="location">
         <div className="grid grid-cols-1 lg:grid-cols-3">
           <div className="bg-primary py-5 px-5 text-white font-semibold">
             <h4>
@@ -212,7 +212,7 @@ const Home = () => {
                 Enter your email address to subscribe to our newsletter
               </span>
             </h4>
-            <div className="pt-10">
+            <div className="pt-10 px-5">
               <form className="flex">
                 <input
                   type="text"
