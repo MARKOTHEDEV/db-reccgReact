@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "../Components/Header";
-import heroBg2 from "../Images/hero2.png";
+import heroBg2 from "../Images/hero2.jpg";
 import about from "../Images/about.jpg";
 import about1 from "../Images/hero3.png";
 

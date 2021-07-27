@@ -49,7 +49,7 @@ export default Events;
 
 const SermonList = ({ sTitle }) => {
   return (
-    <div className="flex px-10 mb-2">
+    <div className="flex px-10 mb-2"> 
       <h3 className="pr-5 border-b font-medium">{sTitle}</h3>
       <span className="border-b text-white">
         <i className="fas fa-microphone pr-2"></i>

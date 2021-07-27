@@ -212,12 +212,12 @@ const Home = () => {
                 Enter your email address to subscribe to our newsletter
               </span>
             </h4>
-            <div className="pt-10 px-5">
+            <div className="pt-10">
               <form className="flex">
                 <input
                   type="text"
                   placeholder="Enter your email"
-                  className="bg-transparent border pl-2"
+                  className="bg-transparent border pl-2 w-full"
                 />
                 <button
                   type="submit"
