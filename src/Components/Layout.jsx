@@ -1,7 +1,6 @@
 import PropTypes from "prop-types";
 import BackToTop from "./BackToTop";
 import Footer from "./Footer";
-import Header from "./Header";
 import StartTop from "./StartTop";
 
 const propTypes = {
@@ -10,7 +9,6 @@ const propTypes = {
 const Layout = ({ children }) => {
   return (
     <>
-      {/* <Header /> */}
       {/* <BackToTop /> */}
       <StartTop />
       <main>{children}</main>

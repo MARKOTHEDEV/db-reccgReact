@@ -5,10 +5,10 @@ nav {
   height: 5rem;
   z-index: 100;
   background: #1b1515;
+  position: relative;
 }
 
 .logo {
-  font-size: 28px;
   padding-bottom: 5px;
 }
 
@@ -73,7 +73,7 @@ nav {
   }
 
   .nav-menu {
-    transform: translateX(1000px);
+    transform: translateY(-1000px);
     top: 75px;
     position: absolute;
     overflow: hidden;
@@ -104,13 +104,12 @@ nav {
   .nav-links-mobile {
     position: absolute;
     display: block;
-    list-style: none;
     background: #1b1515;
     right: 0;
     top: 4rem;
     transition: all 0.5s ease-out;
     width: 100%;
-    transform: translateX(0);
+    transform: translateY(0);
     z-index: 99999 !important;
     height: 100vh;
   }
@@ -143,7 +142,6 @@ nav {
 
 @media (max-width: 500px) {
   .logo {
-    font-size: 1.3rem;
     position: absolute;
     top: 15px;
   }

@@ -3,12 +3,9 @@ import Navbar from "./Navbar";
 
 const Header = ({ bgImage }) => {
   return (
-    <div
-      className="h-screen w-full bg-cover bg-center bg-no-repeat relative"
-      style={{ backgroundImage: `url(${bgImage})` }}
-    >
-     <div>
-     <Navbar />
+    <div className="header">
+     <div className="hidden">
+     {/* <Navbar /> */}
      </div>
     </div>
   );
