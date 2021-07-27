@@ -213,7 +213,7 @@ const Home = () => {
               </span>
             </h4>
             <div className="pt-10">
-              <form>
+              <form className="flex">
                 <input
                   type="text"
                   placeholder="Enter your email"

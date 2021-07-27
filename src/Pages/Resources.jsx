@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Header from "../Components/Header";
 import heroBg3 from "../Images/hero3.png";
 
@@ -7,7 +8,7 @@ const Resources = () => {
     <div>
       <Header bgImage={heroBg3} homeTitle="Our Department" />
       <div className="text-center my-10 myContainer">
-        <h2 className="font-extrabold text-2xl lg:text-3xl">
+        <h2 className="font-extrabold text-xl lg:text-3xl">
           VARIOUS DEPARTMENTS AT THE <br className="hidden lg:flex" /> RCCG
           HOUSE OF HIS PRESENCE
         </h2>
@@ -21,7 +22,7 @@ const Resources = () => {
               className="col-span-2 rounded-3xl py-10 px-7 text-white"
               style={{ backgroundColor: "#000000" }}
             >
-              <h3 className="font-semibold text-2xl pb-2">
+              <h3 className="font-semibold text-lg pb-2">  
                 CHURCH ADMINISTRATION{" "}
               </h3>
               <p className="text-justify">
@@ -33,9 +34,9 @@ const Resources = () => {
               </p>
 
               <div className="flex justify-end">
-                <button className="border font-semibold px-5 py-2 mt-5 text-white">
+                <Link to="/departments" className="border font-semibold px-5 py-2 mt-5 text-white">
                   NEXT <i className="fas fa-arrow-right pl-2"></i>
-                </button>
+                </Link>
               </div>
             </div>
           </div>
