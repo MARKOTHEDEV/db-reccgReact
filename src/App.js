@@ -1,11 +1,10 @@
 import { Route, Switch } from "react-router-dom";
 import Layout from "./Components/Layout";
 import About from "./Pages/About";
-// import Contact from "./Pages/Contact";
 import Home from "./Pages/Home";
 import NotFoundPage from "./Pages/NotFoundPage";
-// import Portfolio from "./Pages/Portfolio";
-// import Services from "./Pages/Services";
+import Resources from "./Pages/Resources";
+
 
 function App() {
   return (
@@ -13,7 +12,7 @@ function App() {
      <Switch>
        <Route exact path="/" component={Home}/>
        <Route path="/about" component={About}/>
-       {/* <Route path="/services" component={Services}/> */}
+       <Route path="/resources" component={Resources}/>
        {/* <Route path="/portfolio" component={Portfolio}/> */}
        {/* <Route path="/contact" component={Contact}/> */}
        <Route><NotFoundPage/></Route>
