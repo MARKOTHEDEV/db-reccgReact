@@ -98,8 +98,8 @@ const Home = () => {
 
             <div>
               <div
-                className="hBox text-center px-12 py-10 text-white rounded-xl"
-                style={{ background: `url(${belief})` }}
+                className="text-center px-12 py-10 text-white rounded-xl"
+                style={{ background: `url(${belief})`, backgroundRepeat: "no-repeat", backgroundPosition: "center", backgroundSize: "cover"  }}
               >
                 <h3 className="pb-5 font-semibold text-2xl">Church Belief</h3>
                 <p className="pb-6">
@@ -252,8 +252,8 @@ export default Home;
 function HomeBox({ bImage, bTitle, bDes }) {
   return (
     <div
-      className="hBox text-center px-12 py-10 text-white"
-      style={{ background: `url(${bImage})` }}
+      className="text-center px-12 py-10 text-white"
+      style={{ background: `url(${bImage})`, backgroundRepeat: "no-repeat", backgroundPosition: "center", backgroundSize: "cover" }}
     >
       <h3 className="pb-5 font-semibold text-2xl">{bTitle}</h3>
       <p className="pb-6">{bDes}</p>
