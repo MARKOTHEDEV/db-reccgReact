@@ -20,7 +20,7 @@ nav {
 }
 
 .nav_link,
-.apply {
+.liveStream {
   text-decoration: none;
   color: #e5e5e5;
   font-size: 1.063rem;
@@ -46,7 +46,7 @@ nav {
   transition: all 0.3s;
 }
 
-.apply {
+.liveStream {
   border: 1px solid var(--secondary);
   border-radius: 50px;
   background: #e5e5e5;
@@ -54,7 +54,7 @@ nav {
  padding-top: 2px;
 }
 
-.apply:hover {
+.liveStream:hover {
   background: transparent;
   color: #e5e5e5;
   transition: all 0.4s ease;
@@ -85,17 +85,21 @@ nav {
       background: none;
   }
 
-
-  .nav_link::after {
+   .nav_link::after {
     content: "";
     width: 0%;
     height: 2px;
     display: block;
-    background-color: none;
+    background: none;
     margin-top: 7px;
     transition: all 0.3s;
   }
   
+  .nav_link:hover::after,
+  .nav_link.is-active::after {
+    width: 100%;
+    transition: all 0.3s;
+  }
 
   .nav-links-mobile {
     position: absolute;
@@ -112,7 +116,7 @@ nav {
   }
 
   .nav_link,
-  .apply {
+  .liveStream {
     text-align: center;
     padding: 2rem;
     width: 100%;
@@ -120,7 +124,7 @@ nav {
     text-transform: uppercase;
   }
 
-  .apply {
+  .liveStream {
     border: none;
     background: none;
     color: #fff !important;
