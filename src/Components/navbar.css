@@ -73,7 +73,7 @@ nav {
   }
 
   .nav-menu {
-    transform: translateY(-1000px);
+    transform: translateX(1000px);
     top: 75px;
     position: absolute;
     overflow: hidden;
@@ -108,10 +108,12 @@ nav {
     right: 0;
     top: 4rem;
     transition: all 0.5s ease-out;
-    width: 100%;
-    transform: translateY(0);
+    width: 70%;
+    transform: translateX(0);
     z-index: 99999 !important;
     height: 100vh;
+    text-align: center;
+    border-radius: 0 0 0 50%;
   }
 
   .nav_link,

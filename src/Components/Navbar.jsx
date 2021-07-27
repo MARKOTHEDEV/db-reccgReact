@@ -50,7 +50,6 @@ const Navbar = () => {
           <li>Contact</li>{" "}
         </NavLink>
 
-       
         <NavLink
           to="/location"
           className="nav_link"
