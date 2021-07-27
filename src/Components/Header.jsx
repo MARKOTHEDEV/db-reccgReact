@@ -4,7 +4,7 @@ import Navbar from "./Navbar";
 const Header = ({ bgImage, homeTitle, homeDesc }) => {
   return (
     <div
-      className="header flex flex-col justify-between py-12"
+      className="h-screen w-full flex flex-col justify-between py-12"
       style={{ background: `url(${bgImage})`, backgroundRepeat: "no-repeat", backgroundPosition: "center", backgroundSize: "cover" }}
     >
       <div className="">
