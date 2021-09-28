@@ -104,6 +104,7 @@ const Home = () => {
                   backgroundRepeat: "no-repeat",
                   backgroundPosition: "center",
                   backgroundSize: "cover",
+
                 }}
               >
                 <h3 className="pb-5 font-semibold text-2xl">Church Belief</h3>

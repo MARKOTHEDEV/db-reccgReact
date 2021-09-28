@@ -14,10 +14,10 @@ const Footer = () => {
                 <i className="fab fa-facebook-f"></i>
               </a>
               <a href="#!">
-                <i className="fab fa-twitter px-5"></i>
+                <i className="fab fa-tiktok px-5"></i>
               </a>
               <a href="#!">
-                <i className="fab fa-instagram"></i>  
+                <i className="fab fa-instagram"></i>
               </a>
             </div>
           </div>
@@ -66,22 +66,10 @@ const Footer = () => {
                 <li>Contact</li>{" "}
               </NavLink>
 
-              <NavLink
-                to="/location"
-                className="footer_link"
-                activeClassName="is-active"
-              >
-                {" "}
-                <li>Location</li>{" "}
-              </NavLink>
               <NavLink to="/liveStream" className="liveStream">
                 {" "}
                 <li className="pb-1">Live stream</li>{" "}
               </NavLink>
-              <li className="border-l-2 border-gray-300 footer_link hidden xl:flex"></li>
-              <li className="hidden xl:flex">
-                <i className="fas fa-search text-gray-300 pt-2 cursor-pointer"></i>
-              </li>
             </ul>
           </div>
         </div>

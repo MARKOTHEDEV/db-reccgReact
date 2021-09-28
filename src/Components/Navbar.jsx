@@ -51,22 +51,12 @@ const Navbar = () => {
           <li>Contact</li>{" "}
         </NavLink>
 
-        <NavLink
-          to="/location"
-          className="nav_link"
-          activeClassName="is-active"
-        >
-          {" "}
-          <li>Location</li>{" "}
-        </NavLink>
+       
         <NavLink to="/liveStream" className="liveStream">
           {" "}
           <li>Live stream</li>{" "}
         </NavLink>
-        <li className="border-l-2 border-gray-300 nav_link hidden xl:flex"></li>
-        <li className="hidden xl:flex">
-          <i className="fas fa-search text-gray-300 pt-2 cursor-pointer"></i>
-        </li>
+       
       </ul>
       <div
         className="mobile-menu-icon md:pr-12 pt-1"
