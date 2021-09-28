@@ -69,7 +69,7 @@ const Footer = () => {
                 <li>Resources</li>{" "}
               </NavLink>
               <NavLink
-                to="/events"
+                to="/workProgress"
                 className="footer_link"
                 activeClassName="is-active"
               >
