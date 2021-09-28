@@ -3,10 +3,19 @@ import Header from "../Components/Header";
 import heroBg2 from "../Images/hero2.jpg";
 import about from "../Images/about.jpg";
 import about1 from "../Images/hero3.png";
+import { motion } from "framer-motion";
+import { animationOne, transition } from "../Components/Animation";
 
 const About = () => {
   return (
-    <div className="about">
+    <motion.div
+      initial="out"
+      animate="in"
+      exit="out"
+      variants={animationOne}
+      transition={transition}
+      className="about"
+    >
       <Header bgImage={heroBg2} homeTitle="About us" />
 
       <div
@@ -118,7 +127,7 @@ const About = () => {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

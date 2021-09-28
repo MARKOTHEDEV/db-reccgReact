@@ -1,4 +1,4 @@
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, useLocation } from "react-router-dom";
 import Layout from "./Components/Layout";
 import About from "./Pages/About";
 import Contact from "./Pages/Contact";
@@ -12,9 +12,10 @@ import WorkProgress from "./Pages/WorkProgress";
 
 
 function App() {
+  let location = useLocation();
   return (
    <Layout>
-     <Switch>
+     <Switch location={location} key={location.pathname}>
        <Route exact path="/" component={Home}/>
        <Route path="/about" component={About}/>
        <Route path="/resources" component={Resources}/>

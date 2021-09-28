@@ -11,10 +11,18 @@ import belief from "../Images/belief.png";
 import event from "../Images/event.jpg";
 import event1 from "../Images/event1.jpg";
 import event2 from "../Images/event2.jpg";
+import { motion } from 'framer-motion';
+import { animationOne, transition } from '../Components/Animation';
 
 const Home = () => {
   return (
-    <div>
+    <motion.div
+    initial='out'
+    animate='in'
+    exit='out'
+    variants={animationOne}
+    transition={transition}>
+    
       <Header
         bgImage={heroBg1}
         homeTitle="Worship with us"
@@ -247,7 +255,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
