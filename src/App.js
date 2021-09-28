@@ -6,6 +6,8 @@ import Events from "./Pages/Events";
 import Home from "./Pages/Home";
 import NotFoundPage from "./Pages/NotFoundPage";
 import Resources from "./Pages/Resources";
+import WorkProgress from "./Pages/WorkProgress";
+
 
 
 function App() {
@@ -17,6 +19,7 @@ function App() {
        <Route path="/resources" component={Resources}/>
        <Route path="/departments" component={Departments}/>
        <Route path="/events" component={Events}/>
+       <Route path="/workProgress" component={WorkProgress}/>
        <Route><NotFoundPage/></Route>
      </Switch>
    </Layout>

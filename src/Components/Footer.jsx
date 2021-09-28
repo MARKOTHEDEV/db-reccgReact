@@ -10,14 +10,33 @@ const Footer = () => {
             <h3 className="text-white pb-5 text-2xl">Fellow us</h3>
 
             <div className="text-xl text-white">
-              <a href="#!">
+              <a
+                className="hover:text-secondary"
+                href="https://www.facebook.com/profile.php?id=100071388745960"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <i className="fab fa-facebook-f"></i>
               </a>
-              <a href="#!">
+              <a
+                className="hover:text-secondary"
+                href="https://vm.tiktok.com/ZMRWb4rpP/"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <i className="fab fa-tiktok px-5"></i>
               </a>
-              <a href="#!">
+              <a
+                className="hover:text-secondary"
+                href="https://www.instagram.com/rccg_hohispresence/"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <i className="fab fa-instagram"></i>
+              </a>
+
+              <a className="hover:text-secondary" href="#!">
+                <i className="fab fa-youtube px-5"></i>
               </a>
             </div>
           </div>

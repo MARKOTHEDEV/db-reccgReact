@@ -42,7 +42,7 @@ const Navbar = () => {
           {" "}
           <li>Resources</li>{" "}
         </NavLink>
-        <NavLink to="/events" className="nav_link" activeClassName="is-active">
+        <NavLink to="/workProgress" className="nav_link" activeClassName="is-active">
           {" "}
           <li>Events</li>{" "}
         </NavLink>
@@ -52,7 +52,7 @@ const Navbar = () => {
         </NavLink>
 
        
-        <NavLink to="/liveStream" className="liveStream">
+        <NavLink to="/workProgress" className="liveStream">
           {" "}
           <li>Live stream</li>{" "}
         </NavLink>
