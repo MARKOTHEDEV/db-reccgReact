@@ -82,7 +82,7 @@ const Footer = () => {
                 activeClassName="is-active"
               >
                 {" "}
-                <li>Contact</li>{" "}
+                <li>Contact Us</li>{" "}
               </NavLink>
 
               <NavLink to="/liveStream" className="liveStream">

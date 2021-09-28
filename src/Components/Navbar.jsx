@@ -48,7 +48,7 @@ const Navbar = () => {
         </NavLink>
         <NavLink to="/contact" className="nav_link" activeClassName="is-active">
           {" "}
-          <li>Contact</li>{" "}
+          <li>Contact Us</li>{" "}
         </NavLink>
 
        

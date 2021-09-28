@@ -1,6 +1,7 @@
 import { Route, Switch } from "react-router-dom";
 import Layout from "./Components/Layout";
 import About from "./Pages/About";
+import Contact from "./Pages/Contact";
 import Departments from "./Pages/Departments";
 import Events from "./Pages/Events";
 import Home from "./Pages/Home";
@@ -20,6 +21,7 @@ function App() {
        <Route path="/departments" component={Departments}/>
        <Route path="/events" component={Events}/>
        <Route path="/workProgress" component={WorkProgress}/>
+       <Route path="/contact" component={Contact}/>
        <Route><NotFoundPage/></Route>
      </Switch>
    </Layout>

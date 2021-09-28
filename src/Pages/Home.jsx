@@ -208,12 +208,12 @@ const Home = () => {
             <h4>
               <span className="block pb-2 text-2xl">Contact Us</span> 5151 S
               Princeton Ave Chicago IL 60609 PO Box 17004 Chicago IL 60617
-              Phone: 312-647-6775 Email: info@rccghohp.org{" "}
-              <span className="block pt-2 text-sm">
+              Phone: 312-647-6775 <span className="block pt-3">Email: info@rccghohp.org</span>{" "}
+              <span className="block pt-4 text-sm">
                 Enter your email address to subscribe to our newsletter
               </span>
             </h4>
-            <div className="pt-10">
+            <div className="pt-5">
               <form className="flex">
                 <input
                   type="text"
