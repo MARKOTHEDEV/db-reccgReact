@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Header from "../Components/Header";
-import heroBg3 from "../Images/hero3.png";
+import heroBg3 from "../Images/hero3.jpg";
 
 const Resources = () => {
   return (

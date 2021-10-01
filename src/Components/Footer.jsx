@@ -61,6 +61,14 @@ const Footer = () => {
                 <li>About us</li>{" "}
               </NavLink>
               <NavLink
+                to="/give"
+                className="footer_link"
+                activeClassName="is-active"
+              >
+                {" "}
+                <li>Give</li>{" "}
+              </NavLink>
+              <NavLink
                 to="/resources"
                 className="footer_link"
                 activeClassName="is-active"

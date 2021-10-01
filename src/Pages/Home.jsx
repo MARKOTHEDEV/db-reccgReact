@@ -1,7 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Header from "../Components/Header";
-import heroBg1 from "../Images/heroHome.png";
 import b1 from "../Images/b1.png";
 import b2 from "../Images/b2.jpg";
 import b3 from "../Images/b3.png";
@@ -11,23 +9,22 @@ import belief from "../Images/belief.png";
 import event from "../Images/event.jpg";
 import event1 from "../Images/event1.jpg";
 import event2 from "../Images/event2.jpg";
-import { motion } from 'framer-motion';
-import { animationOne, transition } from '../Components/Animation';
+import { motion } from "framer-motion";
+import { animationOne, transition } from "../Components/Animation";
+import HomeSlider from "../Components/HomeSlider";
+import Navbar from "../Components/Navbar";
 
 const Home = () => {
   return (
     <motion.div
-    initial='out'
-    animate='in'
-    exit='out'
-    variants={animationOne}
-    transition={transition}>
-    
-      <Header
-        bgImage={heroBg1}
-        homeTitle="Worship with us"
-        homeDesc="Join us live Sunday @ 9:00am - 10:30am (1st Service), 11:00am - 12:30pm (2nd Service) Combine Service every first Sunday of the month @ 10:00am"
-      />
+      initial="out"
+      animate="in"
+      exit="out"
+      variants={animationOne}
+      transition={transition}
+    >
+       <Navbar/>
+      <HomeSlider />
 
       {/* intro */}
       <div className="intro mt-4 flex items-center">
@@ -77,7 +74,7 @@ const Home = () => {
       {/* pastor */}
 
       <div
-        className="bg-no-repeat bg-center bg-center py-10"
+        className="bg-no-repeat bg-center py-10"
         style={{ background: `url(${pbg})` }}
       >
         <div className="myContainer">
@@ -112,7 +109,6 @@ const Home = () => {
                   backgroundRepeat: "no-repeat",
                   backgroundPosition: "center",
                   backgroundSize: "cover",
-
                 }}
               >
                 <h3 className="pb-5 font-semibold text-2xl">Church Belief</h3>
@@ -216,7 +212,8 @@ const Home = () => {
             <h4>
               <span className="block pb-2 text-2xl">Contact Us</span> 5151 S
               Princeton Ave Chicago IL 60609 PO Box 17004 Chicago IL 60617
-              Phone: 312-647-6775 <span className="block pt-3">Email: info@rccghohp.org</span>{" "}
+              Phone: 312-647-6775{" "}
+              <span className="block pt-3">Email: info@rccghohp.org</span>{" "}
               <span className="block pt-4 text-sm">
                 Enter your email address to subscribe to our newsletter
               </span>

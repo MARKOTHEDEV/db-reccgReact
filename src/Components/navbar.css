@@ -4,8 +4,7 @@ nav {
   align-items: center;
   height: 5rem;
   z-index: 100;
-  background: #1b1515;
-  position: relative;
+  background: var(--secondary);
 }
 
 .logo {
@@ -22,7 +21,7 @@ nav {
 .nav_link,
 .liveStream {
   text-decoration: none;
-  color: #e5e5e5;
+  color: #fff;
   font-size: 1.063rem;
   padding: 0 0.625rem;
   margin: 0 0.375rem;
@@ -35,7 +34,7 @@ nav {
   width: 0%;
   height: 2px;
   display: block;
-  background-color: #e5e5e5;
+  background-color: #fff;
   margin-top: 7px;
   transition: all 0.3s;
 }
@@ -47,17 +46,15 @@ nav {
 }
 
 .liveStream {
-  border: 1px solid var(--secondary);
-  border-radius: 50px;
+  border: 1px solid var(--primary);
   background: #e5e5e5;
   color: var(--primary);
  padding-top: 2px;
 }
 
 .liveStream:hover {
-  background: transparent;
-  color: #e5e5e5;
   transition: all 0.4s ease;
+  border: 1px solid var(--secondary);
 }
 
 .mobile-menu-icon {
@@ -99,7 +96,7 @@ nav {
   .nav-links-mobile {
     position: absolute;
     display: block;
-    background: #1b1515;
+    background: var(--secondary);
     right: 0;
     top: 4rem;
     transition: all 0.5s ease-out;
