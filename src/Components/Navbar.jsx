@@ -110,12 +110,12 @@ const Navbar = () => {
             activeClassName="is-active"
             exact={true}
           >
-            Home
+            <li>Home</li>
           </NavLink>
 
           <NavLink to="/about" className="nav_link" activeClassName="is-active">
             {" "}
-            About us
+            <li>About us</li>{" "}
           </NavLink>
           <NavLink
             to="/workprogress"
