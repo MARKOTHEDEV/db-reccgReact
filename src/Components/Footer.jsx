@@ -2,6 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 
 const Footer = () => {
+  const year = new Date().getFullYear();
   return (
     <div className="bg-primary pt-20 pb-7 mt-10">
       <div className="myContainer">
@@ -124,7 +125,7 @@ const Footer = () => {
               </div>
             </div>
             <div className="flex items-end">
-            <p className="text-white">© 2021. Rccg House Of His Presence. All Rights Reserved</p>
+            <p className="text-white">© {year}. Rccg House Of His Presence. All Rights Reserved</p>
          
             </div>
               <div>

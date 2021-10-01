@@ -47,10 +47,6 @@ body {
   }
 }
 
-/* header */
-.header {
-  height: 100vh;
-}
 
 @media screen and (max-width: 768px) {
   .header {
@@ -72,6 +68,11 @@ body {
 /* == About page ===*/
 .about li {
   margin-top: 7px;
+}
+
+/*== General button ===*/
+.btnOne {
+  /* @apply ; */
 }
 
 /*=== FOOTER ===*/

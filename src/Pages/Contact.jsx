@@ -5,6 +5,7 @@ import Header from "../Components/Header";
 import heroBg2 from "../Images/contact.png";
 
 const Contact = () => {
+
   return (
     <motion.div
       initial="out"
@@ -28,10 +29,10 @@ const Contact = () => {
                 PHONE
               </h3>
               <div className="text-gray-200 font-medium tracking-wide text-lg">
-                <a href="tel: +234 902 0840 112" className="block pt-2">
+                <a href="tel: +234 902 0840 112" className="block pt-2 hover:text-secondary">
                   +234 902 0840 112
                 </a>
-                <a href="tel: +234 816 6413 223">+234 816 6413 223</a>
+                <a href="tel: +234 816 6413 223" className="hover:text-secondary">+234 816 6413 223</a>
               </div>
             </div>
 
@@ -44,7 +45,7 @@ const Contact = () => {
                 EMAIL
               </h3>
               <div className="text-gray-200 font-medium tracking-wide text-lg">
-                <a href="mailto: info@rccghohp.org" className="block pt-2">
+                <a href="mailto: info@rccghohp.org" className="block pt-2 hover:text-secondary">
                   info@rccghohp.org
                 </a>
               </div>
