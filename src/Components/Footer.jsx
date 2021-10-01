@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <div className="bg-primary py-20 mt-10">
+    <div className="bg-primary pt-20 pb-7 mt-10">
       <div className="myContainer">
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 lg:gap-0">
           <div>
@@ -93,11 +93,44 @@ const Footer = () => {
                 <li>Contact Us</li>{" "}
               </NavLink>
 
-              <NavLink to="/liveStream" className="liveStream">
+              <NavLink to="/liveStream" className="liveStream hidden lg:flex">
                 {" "}
                 <li className="pb-1">Live stream</li>{" "}
               </NavLink>
             </ul>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-5">
+            <div className="bg-primary text-white font-semibold">
+              <h4>
+                <span className="block pt-4 text-base">
+                  Enter your email address to subscribe to our newsletter
+                </span>
+              </h4>
+              <div className="pt-5">
+                <form className="flex">
+                  <input
+                    type="text"
+                    required
+                    placeholder="Enter your email..."
+                    className="bg-transparent border pl-2 py-1 w-full"
+                  />
+                  <button
+                    type="submit"
+                    className="bg-white px-2"
+                    style={{ paddingTop: 1, paddingBottom: 1 }}
+                  >
+                    <i className="fas fa-paper-plane text-black py-1"></i>
+                  </button>
+                </form>
+              </div>
+            </div>
+            <div className="flex items-end">
+            <p className="text-white">© 2021. Rccg House Of His Presence. All Rights Reserved</p>
+         
+            </div>
+              <div>
+
+            </div>
+            </div>
           </div>
         </div>
       </div>

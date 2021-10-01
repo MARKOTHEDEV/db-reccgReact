@@ -17,7 +17,7 @@ const Contact = () => {
 
       <div>
         {/* contact */}
-        <div className="myContainer mt-8">
+        <div className="myContainer my-10">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 text-center">
             <div className="bg-primary pt-3 pb-8 px-4">
               <div className="flex justify-center">
@@ -60,36 +60,9 @@ const Contact = () => {
               </h3>
               <div className="text-gray-200 font-medium tracking-wide text-base pt-2">
                 <span>
-                5151 S
-                Princeton Ave Chicago IL 60609 PO Box 17004 Chicago IL 60617
+                  5151 S Princeton Ave Chicago IL 60609 PO Box 17004 Chicago IL
+                  60617
                 </span>
-              </div>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-3 mb-5 mt-10">
-            <div className="bg-primary py-5 px-5 text-white font-semibold">
-              <h4>
-                
-                <span className="block pt-4 text-sm">
-                  Enter your email address to subscribe to our newsletter
-                </span>
-              </h4>
-              <div className="pt-5">
-                <form className="flex">
-                  <input
-                    type="text"
-                    placeholder="Enter your email"
-                    className="bg-transparent border pl-2 w-full"
-                  />
-                  <button
-                    type="submit"
-                    className="bg-white px-2"
-                    style={{ paddingTop: 1, paddingBottom: 1 }}
-                  >
-                    <i className="fas fa-paper-plane text-black py-1"></i>
-                  </button>
-                </form>
               </div>
             </div>
           </div>
