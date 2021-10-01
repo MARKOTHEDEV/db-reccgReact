@@ -14,7 +14,7 @@ const Header = ({ bgImage, homeTitle, homeDesc }) => {
       <div className="myContainer text-white">
         <div className="grid grid-cols-1 lg:grid-cols-2 text-left">
           <div>
-            <h2 className="font-black text-2xl md:text-4xl pb-10">{homeTitle}</h2>
+            <h2 className="font-black text-2xl md:text-4xl pb-12">{homeTitle}</h2>
             <p className="font-semibold tracking-wider text-base">
               {homeDesc}
             </p>

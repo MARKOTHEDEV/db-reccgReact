@@ -2,10 +2,19 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Header from "../Components/Header";
 import heroBg3 from "../Images/hero3.jpg";
+import { motion } from "framer-motion";
+import { animationOne, transition } from "../Components/Animation";
+
 
 const Resources = () => {
   return (
-    <div>
+    <motion.div
+    initial="out"
+    animate="in"
+    exit="out"
+    variants={animationOne}
+    transition={transition}
+    >
       <Header bgImage={heroBg3} homeTitle="Our Department" />
       <div className="text-center my-10 myContainer">
         <h2 className="font-extrabold text-xl lg:text-3xl">
@@ -42,7 +51,7 @@ const Resources = () => {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

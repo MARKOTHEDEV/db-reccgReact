@@ -14,7 +14,6 @@ const About = () => {
       exit="out"
       variants={animationOne}
       transition={transition}
-      className="about"
     >
       <Header bgImage={heroBg2} homeTitle="About us" />
 
