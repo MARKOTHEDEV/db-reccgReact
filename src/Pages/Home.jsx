@@ -119,8 +119,8 @@ const Home = () => {
                   dead and Jesus is Lord over all
                 </p>
 
-                <Link to="/about" className="border px-4 py-2 rounded-3xl">
-                  Learn more
+                <Link to="/about" className="btnOne">
+                  Learn More
                 </Link>
               </div>
             </div>
@@ -169,7 +169,7 @@ const Home = () => {
                 >
                   <Link
                     to="/events"
-                    className="border font-semibold px-5 py-2 rounded-3xl text-white"
+                    className="font-semibold btnOne"
                   >
                     READ MORE
                   </Link>
@@ -181,7 +181,7 @@ const Home = () => {
                   {" "}
                   <Link
                     to="/events"
-                    className="border font-semibold px-5 py-2 rounded-3xl text-white"
+                    className="font-semibold btnOne"
                   >
                     READ MORE
                   </Link>

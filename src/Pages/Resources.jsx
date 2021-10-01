@@ -43,7 +43,7 @@ const Resources = () => {
               </p>
 
               <div className="flex justify-end">
-                <Link to="/departments" className="border font-semibold px-5 py-2 mt-5 text-white">
+                <Link to="/departments" className="btnTwo mt-3">
                   NEXT <i className="fas fa-arrow-right pl-2"></i>
                 </Link>
               </div>

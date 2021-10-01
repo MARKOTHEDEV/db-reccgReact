@@ -72,7 +72,11 @@ body {
 
 /*== General button ===*/
 .btnOne {
-  /* @apply ; */
+  @apply border px-4 py-2 text-white rounded-3xl hover:bg-primary hover:border-primary transition ease-in-out duration-500;
+}
+
+.btnTwo {
+  @apply border font-semibold px-5 py-2 mt-2 hover:bg-primary hover:border-primary transition ease-in-out duration-500;
 }
 
 /*=== FOOTER ===*/

@@ -80,8 +80,8 @@ const About = () => {
             </ul>
 
             <div className="flex justify-end">
-              <button className="border font-semibold px-5 py-2 mt-5 text-white">
-                Read more
+              <button className="btnTwo mt-3">
+                Read More
               </button>
             </div>
           </div>
@@ -119,8 +119,8 @@ const About = () => {
             </ul>
 
             <div className="flex justify-end">
-              <button className="border font-semibold px-5 py-2 text-white mt-4">
-                Read more
+              <button className="btnTwo mt-2">
+                Read More
               </button>
             </div>
           </div>

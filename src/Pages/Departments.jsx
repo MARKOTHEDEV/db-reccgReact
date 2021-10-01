@@ -1,6 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import Header from "../Components/Header";
+import { DepList } from "../Components/SubComponents";
 import heroBg3 from "../Images/hero3.jpg";
 
 const Departments = () => {
@@ -89,30 +89,3 @@ export default Departments;
 
 // child comp
 
-const DepList = ({ title, desc }) => {
-  return (
-    <div className="py-3 bg-secondary mt-5">
-      <div className="">
-        <div className="grid grid-cols-1 lg:grid-cols-3">
-          <div></div>
-          <div
-            className="col-span-2 lg:rounded-tl-full lg:rounded-bl-full py-10 px-5 lg:px-16 text-white"
-            style={{ backgroundColor: "#000000" }}
-          >
-            <h3 className="font-semibold text-lg pb-2">{title}</h3>
-            <p className="text-justify">{desc}</p>
-
-            <div className="flex justify-end">
-              <Link
-                to="!#"
-                className="border font-semibold px-5 py-2 mt-5 text-white"
-              >
-                NEXT
-              </Link>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-};
