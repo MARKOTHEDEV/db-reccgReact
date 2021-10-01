@@ -6,21 +6,21 @@ import logo from "../Images/logo.png";
 const Navbar = () => {
   const [isMobile, setIsMobile] = useState(false);
 
- const [NavFix, setNavFix] = useState(false)
+  const [NavFix, setNavFix] = useState(false);
 
   const fixedNav = () => {
     if (window.scrollY >= 25) {
-       setNavFix(true)
+      setNavFix(true);
     } else {
-        setNavFix(false)
+      setNavFix(false);
     }
-}
+  };
 
-window.addEventListener('scroll', fixedNav)
+  window.addEventListener("scroll", fixedNav);
   return (
     <>
-     {/* top section Desktop  */}
-     <div className="lg:flex justify-center gap-16 text-gray-200 py-4 font-medium hidden bg-primary">
+      {/* top section Desktop  */}
+      <div className="lg:flex justify-center gap-16 text-gray-200 py-4 font-medium hidden bg-primary">
         <div className="flex gap-2">
           <svg
             className="w-6 h-6 mt-2"
@@ -38,7 +38,9 @@ window.addEventListener('scroll', fixedNav)
           </svg>
           <div>
             <span className="block font-light">Call us :</span>
-            <a href="tel:+234 807 769 1710" className="hover:text-neutral">+234 807 769 1710</a>
+            <a href="tel:+234 807 769 1710" className="hover:text-neutral">
+              +234 807 769 1710
+            </a>
           </div>
         </div>
         <div className="flex gap-2">
@@ -87,73 +89,83 @@ window.addEventListener('scroll', fixedNav)
           </div>
         </div>
       </div>
-    <nav className={NavFix? "navbar fixed top-0 w-full" : "navbar sticky top-0 w-full"}>
-      <NavLink to="/" className="flex items-center logo">
-        <img src={logo} alt="logo" className="h-14 rounded-full"/>
-        <h3
-          className="uppercase font-medium md:pl-2 hidden lg:flex text-sm text-white"
-        
-        >
-          House <br /> of his <br /> presence
-        </h3>
-      </NavLink>
-      <ul
-        className={isMobile ? "nav-links-mobile" : "nav-menu"}
-        onClick={() => setIsMobile(false)}
+      <nav
+        className={
+          NavFix ? "navbar fixed top-0 w-full" : "navbar sticky top-0 w-full"
+        }
       >
-        <NavLink
-          to="/"
-          className="nav_link"
-          activeClassName="is-active"
-          exact={true}
+        <NavLink to="/" className="flex items-center logo">
+          <img src={logo} alt="logo" className="h-14 rounded-full" />
+          <h3 className="uppercase font-medium md:pl-2 hidden lg:flex text-sm text-white">
+            House <br /> of his <br /> presence
+          </h3>
+        </NavLink>
+        <ul
+          className={isMobile ? "nav-links-mobile" : "nav-menu"}
+          onClick={() => setIsMobile(false)}
         >
-          {" "}
-          <li>Home</li>
-        </NavLink>
-        
-        <NavLink to="/about" className="nav_link" activeClassName="is-active">
-          {" "}
-          <li>About us</li>{" "}
-        </NavLink>
-        <NavLink to="/workprogress" className="nav_link" activeClassName="is-active">
-          {" "}
-          <li>Give</li>
-        </NavLink>
-        <NavLink
-          to="/resources"
-          className="nav_link"
-          activeClassName="is-active"
-        >
-          {" "}
-          <li>Resources</li>{" "}
-        </NavLink>
-        <NavLink to="/workProgress" className="nav_link" activeClassName="is-active">
-          {" "}
-          <li>Events</li>{" "}
-        </NavLink>
-        <NavLink to="/contact" className="nav_link" activeClassName="is-active">
-          {" "}
-          <li>Contact Us</li>{" "}
-        </NavLink>
+          <NavLink
+            to="/"
+            className="nav_link"
+            activeClassName="is-active"
+            exact={true}
+          >
+            Home
+          </NavLink>
 
-       
-        <NavLink to="/workProgress" className="liveStream">
-          {" "}
-          <li>Live stream</li>{" "}
-        </NavLink>
-       
-      </ul>
-      <div
-        className="mobile-menu-icon md:pr-12 pt-1"
-        onClick={() => setIsMobile(!isMobile)}
-      >
-        {isMobile ? (
-          <i className="fas fa-times"></i>
-        ) : (
-          <i className="fas fa-bars"></i>
-        )}
-      </div>
-    </nav>
+          <NavLink to="/about" className="nav_link" activeClassName="is-active">
+            {" "}
+            About us
+          </NavLink>
+          <NavLink
+            to="/workprogress"
+            className="nav_link"
+            activeClassName="is-active"
+          >
+            {" "}
+            <li>Give</li>
+          </NavLink>
+          <NavLink
+            to="/resources"
+            className="nav_link"
+            activeClassName="is-active"
+          >
+            {" "}
+            <li>Resources</li>{" "}
+          </NavLink>
+          <NavLink
+            to="/workProgress"
+            className="nav_link"
+            activeClassName="is-active"
+          >
+            {" "}
+            <li>Events</li>{" "}
+          </NavLink>
+          <NavLink
+            to="/contact"
+            className="nav_link"
+            activeClassName="is-active"
+          >
+            {" "}
+            <li>Contact Us</li>{" "}
+          </NavLink>
+
+          <NavLink to="/workProgress" className="liveStream">
+            {" "}
+            <li>Live stream</li>{" "}
+          </NavLink>
+        </ul>
+        <div
+          className="mobile-menu-icon md:pr-12 pt-1"
+          onClick={() => setIsMobile(!isMobile)}
+        >
+          {isMobile ? (
+            <i className="fas fa-times"></i>
+          ) : (
+            <i className="fas fa-bars"></i>
+          )}
+        </div>
+      </nav>
     </>
   );
 };
