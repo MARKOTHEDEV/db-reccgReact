@@ -23,7 +23,7 @@ const Home = () => {
       variants={animationOne}
       transition={transition}
     >
-       <Navbar/>
+      <Navbar />
       <HomeSlider />
 
       {/* intro */}
@@ -205,53 +205,7 @@ const Home = () => {
         </div>
       </div>
 
-      {/* contact */}
-      <div className="myContainer" id="location">
-        <div className="grid grid-cols-1 lg:grid-cols-3">
-          <div className="bg-primary py-5 px-5 text-white font-semibold">
-            <h4>
-              <span className="block pb-2 text-2xl">Contact Us</span> 5151 S
-              Princeton Ave Chicago IL 60609 PO Box 17004 Chicago IL 60617
-              Phone: 312-647-6775{" "}
-              <span className="block pt-3">Email: info@rccghohp.org</span>{" "}
-              <span className="block pt-4 text-sm">
-                Enter your email address to subscribe to our newsletter
-              </span>
-            </h4>
-            <div className="pt-5">
-              <form className="flex">
-                <input
-                  type="text"
-                  placeholder="Enter your email"
-                  className="bg-transparent border pl-2 w-full"
-                />
-                <button
-                  type="submit"
-                  className="bg-white px-2"
-                  style={{ paddingTop: 1, paddingBottom: 1 }}
-                >
-                  <i className="fas fa-paper-plane text-black py-1"></i>
-                </button>
-              </form>
-            </div>
-          </div>
-
-          <div className="col-span-2">
-            {/* Google map */}
-            <iframe
-              width="100%"
-              height="300"
-              id="gmap_canvas"
-              src="https://maps.google.com/maps?q=5151%20S%20Princeton%20Ave%20Chicago&t=&z=13&ie=UTF8&iwloc=&output=embed"
-              frameBorder="0"
-              scrolling="no"
-              marginHeight="0"
-              marginWidth="0"
-              title="google map"
-            ></iframe>
-          </div>
-        </div>
-      </div>
+   
     </motion.div>
   );
 };

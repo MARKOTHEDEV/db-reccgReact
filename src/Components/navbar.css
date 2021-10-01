@@ -78,7 +78,7 @@ nav {
   }
 
   .nav_link:hover, .nav_link.is-active {
-      color: var(--secondary);
+      color: var(--primary);
       background: none;
   }
 
