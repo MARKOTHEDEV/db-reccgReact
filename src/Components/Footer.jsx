@@ -42,7 +42,16 @@ const Footer = () => {
                 rel="noreferrer"
                 href="https://www.youtube.com/c/RCCGHouseofHisPresenceChicago"
               >
-                <i className="fab fa-youtube px-5"></i>
+                <i className="fab fa-youtube pl-5"></i>
+              </a>
+
+              <a
+                className="hover:text-secondary"
+                target="_blank"
+                rel="noreferrer"
+                href="https://twitter.com/RccgHohp"
+              >
+                <i className="fab fa-twitter px-5"></i>
               </a>
             </div>
           </div>
@@ -98,8 +107,12 @@ const Footer = () => {
                 <li>Contact Us</li>
               </NavLink>
 
-              <a href="https://www.youtube.com/c/RCCGHouseofHisPresenceChicago" target="_blank" rel="noreferrer" className="liveStream hidden lg:flex">
-               
+              <a
+                href="https://www.youtube.com/c/RCCGHouseofHisPresenceChicago"
+                target="_blank"
+                rel="noreferrer"
+                className="liveStream hidden lg:flex"
+              >
                 <li className="pb-1">Live stream</li>
               </a>
             </ul>

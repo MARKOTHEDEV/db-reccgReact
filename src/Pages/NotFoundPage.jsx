@@ -10,7 +10,7 @@ const NotFoundPage = () => {
       <div className="flex justify-center">
         <div className="bg-primary p-5 rounded-xl">
           <div className="bg-black flex justify-center items-center p-12 sm:p-20 rounded-md">
-            <h3 className="text-white text-7xl font-black tracking-wider">
+            <h3 className="text-white text-7xl font-black tracking-wider"> 
               404
             </h3>
           </div>
