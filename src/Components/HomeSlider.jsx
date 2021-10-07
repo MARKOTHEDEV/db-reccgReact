@@ -16,13 +16,14 @@ function SamplePrevArrow(props) {
 }
 
 const HomeSlider = () => {
-  const settings = {
+  let settings = {
     className: "",
     infinite: true,
     speed: 4000,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
+    autoplaySpeed: 15000,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
   };
@@ -31,13 +32,28 @@ const HomeSlider = () => {
     <div className="text-white">
       <Slider {...settings}>
         <div>
-          <img src={slider1} alt="rccg" className="w-full h-screen"/>
+          <img
+            src={slider1}
+            alt="rccg"
+            className="w-full"
+            style={{ height: "80vh" }}
+          />
         </div>
         <div>
-          <img src={slider2} alt="rccg" className="w-full h-screen"/>
+          <img
+            src={slider2}
+            alt="rccg"
+            className="w-full"
+            style={{ height: "80vh" }}
+          />
         </div>
         <div>
-          <img src={slider3} alt="rccg" className="w-full h-screen"/>
+          <img
+            src={slider3}
+            alt="rccg"
+            className="w-full"
+            style={{ height: "80vh" }}
+          />
         </div>
       </Slider>
     </div>

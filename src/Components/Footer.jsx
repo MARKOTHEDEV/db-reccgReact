@@ -104,12 +104,12 @@ const Footer = () => {
               </a>
             </ul>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-5">
-              <div className="bg-primary text-white font-semibold">
-                <h4>
-                  <span className="block pt-4 text-base">
+              <div className="bg-primary text-white font-medium">
+                <div>
+                  <span className="block pt-4 ">
                     Enter your email address to subscribe to our newsletter
                   </span>
-                </h4>
+                </div>
                 <div className="pt-5">
                   <form className="flex">
                     <input
