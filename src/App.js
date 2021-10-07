@@ -4,6 +4,7 @@ import About from "./Pages/About";
 import Contact from "./Pages/Contact";
 import Departments from "./Pages/Departments";
 import Events from "./Pages/Events";
+import Give from "./Pages/Give";
 import Home from "./Pages/Home";
 import NotFoundPage from "./Pages/NotFoundPage";
 import Resources from "./Pages/Resources";
@@ -23,6 +24,7 @@ function App() {
        <Route path="/events" component={Events}/>
        <Route path="/workProgress" component={WorkProgress}/>
        <Route path="/contact" component={Contact}/>
+       <Route path="/give" component={Give}/>
        <Route><NotFoundPage/></Route>
      </Switch>
    </Layout>
