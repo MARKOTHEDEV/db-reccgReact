@@ -118,7 +118,7 @@ const Navbar = () => {
             <li>About us</li>{" "}
           </NavLink>
           <NavLink
-            to="/workprogress"
+            to="/give"
             className="nav_link"
             activeClassName="is-active"
           >
@@ -126,7 +126,7 @@ const Navbar = () => {
             <li>Give</li>
           </NavLink>
           <NavLink
-            to="/give"
+            to="/resources"
             className="nav_link"
             activeClassName="is-active"
           >
