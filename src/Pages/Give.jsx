@@ -1,12 +1,11 @@
 import React from 'react'
 
-const LiveStream = () => {
+const Give = () => {
     return (
         <div>
-            LiveStream
-
+            hello
         </div>
     )
 }
 
-export default LiveStream
+export default Give
