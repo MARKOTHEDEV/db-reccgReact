@@ -11,7 +11,6 @@ import Resources from "./Pages/Resources";
 import WorkProgress from "./Pages/WorkProgress";
 
 
-
 function App() {
   let location = useLocation();
   return (
