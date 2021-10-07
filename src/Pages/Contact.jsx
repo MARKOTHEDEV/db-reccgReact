@@ -29,8 +29,8 @@ const Contact = () => {
                 PHONE
               </h3>
               <div className="text-gray-200 font-medium tracking-wide text-lg">
-                <a href="tel: +234 8077691710" className="block pt-2 hover:text-secondary">
-                  +234 8077691710
+                <a href="tel: +1 807 769 1710" className="block pt-2 hover:text-secondary">
+                  +1 807 769 1710
                 </a>
                
               </div>
@@ -45,8 +45,8 @@ const Contact = () => {
                 EMAIL
               </h3>
               <div className="text-gray-200 font-medium tracking-wide text-lg">
-                <a href="mailto: info@rccghohp.org" className="block pt-2 hover:text-secondary">
-                  info@rccghohp.org
+                <a href="mailto: info@rccghohp2021.org" className="block pt-2 hover:text-secondary">
+                   info@rccghohp2021.org
                 </a>
               </div>
             </div>

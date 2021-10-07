@@ -129,26 +129,34 @@ const Home = () => {
       </div>
 
       {/* sermon */}
-      <div className="py-16 mt-14" style={{ backgroundColor: "#FF4370" }}>
+      <div className="pt-16 pb-6 mt-14" style={{ backgroundColor: "#FF4370" }}>
         <div className="myContainer">
           <h2 className="pb-7 font-bold text-2xl">SERMONS</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-6 gap-x-16">
+          
             <Sermon
-              topic="let there be light"
-              bText="Genesis 1:1-3"
-              date="july 4 2021"
+              topic="Thanksgiving Sunday service"
+              bText="Isaiah 61:1"
+              date="oct 3 2021"
+              vId="TDuyfbGEYSo"
+            />
+              <Sermon
+              topic="Divine advancement"
+              bText="Philippians 3:12-14"
+              date="oct 1 2021"
+              vId="ZJVivHqhauQ"
             />
             <Sermon
-              topic="let there be light"
-              bText="Genesis 1:1-3"
-              date="july 4 2021"
-            />
-            <Sermon
-              topic="let there be light"
-              bText="Genesis 1:1-3"
-              date="july 4 2021"
+              topic="Divine advancement"
+              bText="Philippians 3:12-14"
+              date="Sep 26 2021"
+              vId="EW9MPXW98oc"
             />
           </div>
+
+        <div className="flex justify-center mt-8">
+        <a href="https://www.youtube.com/c/RCCGHouseofHisPresenceChicago" target="_blank" rel="noreferrer" className="py-2 rounded px-3 text-lg bg-red-700 hover:bg-red-900 transition ease-in-out duration-500 text-white font-medium capitalize"><i className="fab fa-youtube pr-1"></i> Watch and comment on youtube</a>
+        </div>
         </div>
       </div>
 

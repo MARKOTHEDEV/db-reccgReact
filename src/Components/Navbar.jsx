@@ -38,8 +38,8 @@ const Navbar = () => {
           </svg>
           <div>
             <span className="block font-light">Call us :</span>
-            <a href="tel:+234 807 769 1710" className="hover:text-neutral">
-              +234 807 769 1710
+            <a href="tel:+1 807 769 1710" className="hover:text-neutral">
+              +1 807 769 1710
             </a>
           </div>
         </div>
@@ -61,10 +61,10 @@ const Navbar = () => {
           <div>
             <span className="block font-light">Email us :</span>
             <a
-              href="mailto:info@rccghohp.org"
+              href="mailto:info@rccghohp2021.org"
               className="racking-wider hover:text-neutral"
             >
-              info@rccghohp.org
+               info@rccghohp2021.org
             </a>
           </div>
         </div>
@@ -84,8 +84,8 @@ const Navbar = () => {
             ></path>
           </svg>
           <div>
-            <span className="block font-light">Sunday Service:</span>
-            <span>Mon-Fri: 8am – 5pm</span>
+            <span className="block font-light">First Service:</span>
+            <span>9:00am – 10:30pm</span>
           </div>
         </div>
       </div>
@@ -150,10 +150,10 @@ const Navbar = () => {
             <li>Contact Us</li>{" "}
           </NavLink>
 
-          <NavLink to="/workProgress" className="liveStream">
-            {" "}
+          <a href="https://www.youtube.com/c/RCCGHouseofHisPresenceChicago" target="_blank" rel="noreferrer" className="liveStream">
+           
             <li>Live stream</li>{" "}
-          </NavLink>
+          </a>
         </ul>
         <div
           className="mobile-menu-icon md:pr-12 pt-1"

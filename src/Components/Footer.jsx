@@ -95,14 +95,13 @@ const Footer = () => {
                 className="footer_link"
                 activeClassName="is-active"
               >
-                {" "}
-                <li>Contact Us</li>{" "}
+                <li>Contact Us</li>
               </NavLink>
 
-              <NavLink to="/liveStream" className="liveStream hidden lg:flex">
-                {" "}
-                <li className="pb-1">Live stream</li>{" "}
-              </NavLink>
+              <a href="https://www.youtube.com/c/RCCGHouseofHisPresenceChicago" target="_blank" rel="noreferrer" className="liveStream hidden lg:flex">
+               
+                <li className="pb-1">Live stream</li>
+              </a>
             </ul>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-5">
               <div className="bg-primary text-white font-semibold">
