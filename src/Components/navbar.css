@@ -55,6 +55,7 @@ nav {
 .liveStream:hover {
   transition: all 0.4s ease;
   border: 1px solid var(--secondary);
+  @apply bg-primary text-white transition ease-in-out duration-500;
 }
 
 .mobile-menu-icon {

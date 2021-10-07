@@ -1,8 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Navbar from "../Components/Navbar";
 
 const NotFoundPage = () => {
   return (
+    <>
+    <Navbar/>
     <div className="myContainer my-20">
       <div className="flex justify-center">
         <div className="bg-primary p-5 rounded-xl">
@@ -20,6 +23,7 @@ const NotFoundPage = () => {
         </Link>
       </div>
     </div>
+    </>
   );
 };
 
