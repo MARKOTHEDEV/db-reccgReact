@@ -36,7 +36,12 @@ const Footer = () => {
                 <i className="fab fa-instagram"></i>
               </a>
 
-              <a className="hover:text-secondary" href="#!">
+              <a
+                className="hover:text-secondary"
+                target="_blank"
+                rel="noreferrer"
+                href="https://www.youtube.com/c/RCCGHouseofHisPresenceChicago"
+              >
                 <i className="fab fa-youtube px-5"></i>
               </a>
             </div>
@@ -100,37 +105,36 @@ const Footer = () => {
               </NavLink>
             </ul>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-5">
-            <div className="bg-primary text-white font-semibold">
-              <h4>
-                <span className="block pt-4 text-base">
-                  Enter your email address to subscribe to our newsletter
-                </span>
-              </h4>
-              <div className="pt-5">
-                <form className="flex">
-                  <input
-                    type="text"
-                    required
-                    placeholder="Enter your email..."
-                    className="bg-transparent border pl-2 py-1 w-full"
-                  />
-                  <button
-                    type="submit"
-                    className="bg-white px-2"
-                    style={{ paddingTop: 1, paddingBottom: 1 }}
-                  >
-                    <i className="fas fa-paper-plane text-black py-1"></i>
-                  </button>
-                </form>
+              <div className="bg-primary text-white font-semibold">
+                <h4>
+                  <span className="block pt-4 text-base">
+                    Enter your email address to subscribe to our newsletter
+                  </span>
+                </h4>
+                <div className="pt-5">
+                  <form className="flex">
+                    <input
+                      type="text"
+                      required
+                      placeholder="Enter your email..."
+                      className="bg-transparent border pl-2 py-1 w-full"
+                    />
+                    <button
+                      type="submit"
+                      className="bg-white px-2"
+                      style={{ paddingTop: 1, paddingBottom: 1 }}
+                    >
+                      <i className="fas fa-paper-plane text-black py-1"></i>
+                    </button>
+                  </form>
+                </div>
               </div>
-            </div>
-            <div className="flex items-end">
-            <p className="text-white">© {year}. Rccg House Of His Presence. All Rights Reserved</p>
-         
-            </div>
-              <div>
-
-            </div>
+              <div className="flex items-end">
+                <p className="text-white">
+                  © {year}. Rccg House Of His Presence. All Rights Reserved
+                </p>
+              </div>
+              <div></div>
             </div>
           </div>
         </div>

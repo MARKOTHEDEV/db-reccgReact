@@ -1,6 +1,7 @@
 {
   "name": "rccg",
   "version": "0.1.0",
+  "homepage": "https://rccghohp2021.org/",
   "private": true,
   "dependencies": {
     "@craco/craco": "^6.2.0",
