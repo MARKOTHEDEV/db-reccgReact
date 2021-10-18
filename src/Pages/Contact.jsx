@@ -3,8 +3,7 @@ import { motion } from "framer-motion";
 import { animationOne, transition } from "../Components/Animation";
 import banner from "../Images/contact_banner.jpg";
 import Navbar from "../Components/Navbar";
-import { validate } from "jest-validate";
-import contact from "../Images/conatct.svg"
+import contact from "../Images/conatct.svg";
 import "react-responsive-modal/styles.css";
 import { Modal } from "react-responsive-modal";
 
@@ -17,7 +16,6 @@ const Contact = () => {
   };
 
   const [person, setPerson] = useState(initialState);
-  const [errorMsg, setErrorMsg] = useState(initialState);
 
   const [sending, setSending] = useState(false);
 
@@ -32,40 +30,32 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setSending(true);
+    const myData = await fetch("http://localhost:3000/send", {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify({ person }),
+    });
+    const lastData = await myData.json();
+    // console.log("lastData", lastData);
 
-    // check error onSubmit
-    const formErrors = validate(person);
-    setErrorMsg(formErrors);
-    if (Object.keys(formErrors).length) {
-      return;
-    } else {
-      setSending(true);
-      const myData = await fetch("http://localhost:3000/send", {
-        method: "POST",
-        headers: {
-          "Content-type": "application/json",
-        },
-        body: JSON.stringify({ person }),
-      });
-      const lastData = await myData.json();
-      // console.log("lastData", lastData);
-
-      if (lastData.status === "success") {
-        setOpenSuMeg(true);
-        setSending(false);
-      } else if (lastData.status === "fail") {
-        setOpenErrorMsg(true);
-        setSending(false);
-      }
-
-      setPerson(initialState);
+    if (lastData.status === "success") {
+      setOpenSuMeg(true);
+      setSending(false);
+    } else if (lastData.status === "fail") {
+      setOpenErrorMsg(true);
+      setSending(false);
     }
+
+    setPerson(initialState);
   };
 
   return (
     <>
-        {/* Form success message */}
-        <Modal open={openSuMeg} onClose={onCloseModal}>
+      {/* Form success message */}
+      <Modal open={openSuMeg} onClose={onCloseModal}>
         <div className="mr-12">
           <h3 className="font-semibold text-lg pb-1"> Message sent !!!</h3>
           <p>We'll get back to you.</p>
@@ -79,194 +69,186 @@ const Contact = () => {
           <p>Try again later.</p>
         </div>
       </Modal>
-    <motion.div
-      initial="out"
-      animate="in"
-      exit="out"
-      variants={animationOne}
-      transition={transition}
-    >
-      <Navbar />
-      <div
-        className="text-white flex justify-center text-center items-center px-5 bg-center bg-cover bg-blend-overlay"
-        style={{ backgroundImage: `url(${banner})`, height: "55vh" }}
+      <motion.div
+        initial="out"
+        animate="in"
+        exit="out"
+        variants={animationOne}
+        transition={transition}
       >
-        <div data-aos="zoom-in">
-          <h3 className="text-2xl md:text-4xl font-black pb-2 uppercase">
-            Contact Us
-          </h3>
+        <Navbar />
+        <div
+          className="text-white flex justify-center text-center items-center px-5 bg-center bg-cover bg-blend-overlay"
+          style={{ backgroundImage: `url(${banner})`, height: "55vh" }}
+        >
+          <div data-aos="zoom-in">
+            <h3 className="text-2xl md:text-4xl font-black pb-2 uppercase">
+              Contact Us
+            </h3>
+          </div>
         </div>
-      </div>
-      <div>
-        {/* contact */}
-        <div className="myContainer my-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-10">
-          <div>
-            <h3 className="font-semibold text-2xl">Get in touch</h3>
-            <p className="pb-3 pt-2">Feel free to include your prayer requests and the pastor will receive them directly.</p>
-            <div className="bg-gray-300 px-4 py-6 rounded">
-              <form onSubmit={handleSubmit}>
-                <div>
-                  <input
-                    type="text"
-                    name="contactName"
-                    id="contactName"
-                    placeholder="Full Name"
-                    className="py-2 px-3 rounded-sm w-full focus:outline-none font-semibold"
-                    value={person.contactName}
-                    onChange={handleChange}
-                  />
-                  <span className="block text-red-600">
-                    {errorMsg.contactName}
-                  </span>
+        <div>
+          {/* contact */}
+          <div className="myContainer my-10">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-10">
+              <div>
+                <h3 className="font-semibold text-2xl">Get in touch</h3>
+                <p className="pb-3 pt-2">
+                  Feel free to include your prayer requests and the pastor will
+                  receive them directly.
+                </p>
+                <div className="bg-gray-300 px-4 py-6 rounded">
+                  <form onSubmit={handleSubmit}>
+                    <div>
+                      <input
+                        required
+                        type="text"
+                        name="contactName"
+                        id="contactName"
+                        placeholder="Full Name"
+                        className="py-2 px-3 rounded-sm w-full focus:outline-none font-semibold"
+                        value={person.contactName}
+                        onChange={handleChange}
+                      />
+                    </div>
+
+                    <div className="my-4">
+                      <input
+                        required
+                        type="email"
+                        name="contactEmail"
+                        id="contactEmail"
+                        placeholder="Enter Email"
+                        className="py-2 px-3 rounded-sm w-full focus:outline-none font-semibold"
+                        value={person.contactEmail}
+                        onChange={handleChange}
+                      />
+                    </div>
+
+                    <div>
+                      <input
+                        required
+                        type="text"
+                        name="contactSubject"
+                        id="contactSubject"
+                        placeholder="Enter Subject"
+                        className="py-2 px-3 rounded-sm w-full focus:outline-none font-semibold"
+                        value={person.contactSubject}
+                        onChange={handleChange}
+                      />
+                    </div>
+
+                    <div>
+                      <textarea
+                        required
+                        name="contactMessage"
+                        id="contactMessage"
+                        className="w-full mt-4 pl-2 pt-2 h-28 resize-none focus:outline-none rounded-sm font-semibold"
+                        placeholder="Message"
+                        value={person.contactMessage}
+                        onChange={handleChange}
+                      ></textarea>
+                    </div>
+
+                    <div className="flex justify-center mt-2">
+                      <button
+                        type="submit"
+                        className="bg-primary py-3 px-5 text-white font-semibold tracking-wider"
+                      >
+                        {sending ? "Sending..." : "Send Message"}
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+
+              <div className="hidden lg:flex items-center justify-center ">
+                <img src={contact} alt="contact us" className="h-60" />
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 text-center">
+              <div className="bg-primary pt-3 pb-8 px-4">
+                <div className="flex justify-center">
+                  <i className="fas fa-phone-alt text-white text-2xl bg-secondary rounded-full mb-5 mt-3 flex justify-center items-center w-14 h-14"></i>
                 </div>
 
-                <div className="my-4">
-                  <input
-                    type="email"
-                    name="contactEmail"
-                    id="contactEmail"
-                    placeholder="Enter Email"
-                    className="py-2 px-3 rounded-sm w-full focus:outline-none font-semibold"
-                    value={person.contactEmail}
-                    onChange={handleChange}
-                  />
-                  <span className="block text-red-600">
-                    {errorMsg.contactEmail}
-                  </span>
-                </div>
-
-                <div>
-                  <input
-                    type="text"
-                    name="contactSubject"
-                    id="contactSubject"
-                    placeholder="Enter Subject"
-                    className="py-2 px-3 rounded-sm w-full focus:outline-none font-semibold"
-                    value={person.contactSubject}
-                    onChange={handleChange}
-                  />
-                  <span className="block text-red-600">
-                    {errorMsg.contactSubject}
-                  </span>
-                </div>
-
-                <div>
-                  <textarea
-                    name="contactMessage"
-                    id="contactMessage"
-                    className="w-full mt-4 pl-2 pt-2 h-28 resize-none focus:outline-none rounded-sm font-semibold"
-                    placeholder="Message"
-                    value={person.contactMessage}
-                    onChange={handleChange}
-                  ></textarea>
-                  <span className="block text-red-600">
-                    {errorMsg.contactMessage}
-                  </span>
-                </div>
-
-                <div className="flex justify-center mt-2">
-                  <button
-                    type="submit"
-                    className="bg-primary py-3 px-5 text-white font-semibold tracking-wider"
+                <h3 className="text-white font-medium tracking-wide text-xl">
+                  PHONE
+                </h3>
+                <div className="text-gray-200 font-medium tracking-wide text-lg">
+                  <a
+                    href="tel: +1 807 769 1710"
+                    className="block pt-2 hover:text-secondary"
                   >
-                    {sending ? "Sending..." : "Send Message"}
-                  </button>
+                    +1 807 769 1710
+                  </a>
                 </div>
-              </form>
-            </div>
-            </div>
-
-            <div className="hidden lg:flex items-center justify-center ">
-            <img src={contact} alt="contact us" className="h-60"/>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 text-center">
-            <div className="bg-primary pt-3 pb-8 px-4">
-              <div className="flex justify-center">
-                <i className="fas fa-phone-alt text-white text-2xl bg-secondary rounded-full mb-5 mt-3 flex justify-center items-center w-14 h-14"></i>
               </div>
 
-              <h3 className="text-white font-medium tracking-wide text-xl">
-                PHONE
-              </h3>
-              <div className="text-gray-200 font-medium tracking-wide text-lg">
-                <a
-                  href="tel: +1 807 769 1710"
-                  className="block pt-2 hover:text-secondary"
-                >
-                  +1 807 769 1710
-                </a>
-              </div>
-            </div>
+              <div className="bg-primary pt-3 pb-8 px-4">
+                <div className="flex justify-center">
+                  <i className="fas fa-envelope text-white text-2xl bg-secondary rounded-full mb-5 mt-3 flex justify-center items-center w-14 h-14"></i>
+                </div>
 
-            <div className="bg-primary pt-3 pb-8 px-4">
-              <div className="flex justify-center">
-                <i className="fas fa-envelope text-white text-2xl bg-secondary rounded-full mb-5 mt-3 flex justify-center items-center w-14 h-14"></i>
-              </div>
-
-              <h3 className="text-white font-medium tracking-wide text-xl">
-                EMAIL
-              </h3>
-              <div className="text-gray-200 font-medium tracking-wide text-lg">
-                <a
-                  href="mailto: info@rccghohp2021.org"
-                  className="block pt-2 hover:text-secondary"
-                >
-                  info@rccghohp2021.org
-                </a>
-              </div>
-            </div>
-
-            <div className="bg-primary pt-3 pb-8 px-4">
-              <div className="flex justify-center">
-                <i className="fas fa-map-marker-alt text-white text-2xl bg-secondary rounded-full mb-5 mt-3 flex justify-center items-center w-14 h-14"></i>
+                <h3 className="text-white font-medium tracking-wide text-xl">
+                  EMAIL
+                </h3>
+                <div className="text-gray-200 font-medium tracking-wide text-lg">
+                  <a
+                    href="mailto: info@rccghohp2021.org"
+                    className="block pt-2 hover:text-secondary"
+                  >
+                    info@rccghohp2021.org
+                  </a>
+                </div>
               </div>
 
-              <h3 className="text-white font-medium tracking-wide text-xl">
-                ADDRESS
-              </h3>
-              <div className="text-gray-200 font-medium tracking-wide text-base pt-2">
-                <span>
-                  5151 S Princeton Ave Chicago IL 60609 PO Box 17004 Chicago IL
-                  60617
-                </span>
-              </div>
-            </div>
+              <div className="bg-primary pt-3 pb-8 px-4">
+                <div className="flex justify-center">
+                  <i className="fas fa-map-marker-alt text-white text-2xl bg-secondary rounded-full mb-5 mt-3 flex justify-center items-center w-14 h-14"></i>
+                </div>
 
-            <div className="bg-primary pt-3 pb-8 px-4">
-              <div className="flex justify-center">
-                <i className="fas fa-map-marker-alt text-white text-2xl bg-secondary rounded-full mb-5 mt-3 flex justify-center items-center w-14 h-14"></i>
+                <h3 className="text-white font-medium tracking-wide text-xl">
+                  ADDRESS
+                </h3>
+                <div className="text-gray-200 font-medium tracking-wide text-base pt-2">
+                  <span>
+                    5151 S Princeton Ave Chicago IL 60609 PO Box 17004 Chicago
+                    IL 60617
+                  </span>
+                </div>
               </div>
 
-              <h3 className="text-white font-medium tracking-wide text-xl">
-               PO BOX
-              </h3>
-              <div className="text-gray-200 font-medium tracking-wide text-base pt-2">
-                <span>
-                   PO Box 17004 Chicago IL
-                 
-                </span>
+              <div className="bg-primary pt-3 pb-8 px-4">
+                <div className="flex justify-center">
+                  <i className="fas fa-map-marker-alt text-white text-2xl bg-secondary rounded-full mb-5 mt-3 flex justify-center items-center w-14 h-14"></i>
+                </div>
+
+                <h3 className="text-white font-medium tracking-wide text-xl">
+                  PO BOX
+                </h3>
+                <div className="text-gray-200 font-medium tracking-wide text-base pt-2">
+                  <span>PO Box 17004 Chicago IL</span>
+                </div>
               </div>
             </div>
           </div>
+
+          {/* Google map */}
+          <iframe
+            width="100%"
+            height="400"
+            id="gmap_canvas"
+            src="https://maps.google.com/maps?q=5151%20S%20Princeton%20Ave%20Chicago&t=&z=13&ie=UTF8&iwloc=&output=embed"
+            frameBorder="0"
+            scrolling="no"
+            marginHeight="0"
+            marginWidth="0"
+            title="google map"
+          ></iframe>
         </div>
-
-        {/* Google map */}
-        <iframe
-          width="100%"
-          height="400"
-          id="gmap_canvas"
-          src="https://maps.google.com/maps?q=5151%20S%20Princeton%20Ave%20Chicago&t=&z=13&ie=UTF8&iwloc=&output=embed"
-          frameBorder="0"
-          scrolling="no"
-          marginHeight="0"
-          marginWidth="0"
-          title="google map"
-        ></iframe>
-      </div>
-    </motion.div>
+      </motion.div>
     </>
   );
 };
