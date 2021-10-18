@@ -1,8 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { animationOne, transition } from "../Components/Animation";
-import Header from "../Components/Header";
-import heroBg2 from "../Images/contact.png";
+import banner from "../Images/contact_banner.jpg";
+import Navbar from "../Components/Navbar"
 
 const Contact = () => {
 
@@ -14,8 +14,17 @@ const Contact = () => {
       variants={animationOne}
       transition={transition}
     >
-      <Header bgImage={heroBg2} homeTitle="Contact us" />
-
+     <Navbar/>
+     <div
+        className="text-white flex justify-center text-center items-center px-5 bg-center bg-cover bg-blend-overlay"
+        style={{ backgroundImage: `url(${banner})`, height: "55vh" }}
+      >
+        <div data-aos="zoom-in">
+          <h3 className="text-2xl md:text-4xl font-black pb-2 uppercase">
+            Contact Us
+          </h3>
+        </div>
+      </div>
       <div>
         {/* contact */}
         <div className="myContainer my-10">
@@ -24,7 +33,7 @@ const Contact = () => {
 
                 </div>
 
-                
+
            </div>
            
 
