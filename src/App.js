@@ -9,7 +9,9 @@ import Home from "./Pages/Home";
 import NotFoundPage from "./Pages/NotFoundPage";
 import Resources from "./Pages/Resources";
 import WorkProgress from "./Pages/WorkProgress";
-
+import VideoArchive from './Pages/VideoArchive';
+import AllMinisters from './Pages/AllMinisters';
+import Gallery from './Pages/Gallery';
 
 function App() {
   let location = useLocation();
@@ -24,6 +26,9 @@ function App() {
        <Route path="/workProgress" component={WorkProgress}/>
        <Route path="/contact" component={Contact}/>
        <Route path="/give" component={Give}/>
+       <Route path="/archive" component={VideoArchive}/>
+       <Route path="/all-minister" component={AllMinisters } />
+       <Route path={'/gallery'} component={Gallery} />
        <Route><NotFoundPage/></Route>
      </Switch>
    </Layout>
