@@ -5,6 +5,7 @@ import b2 from "../Images/b2.jpg";
 import b3 from "../Images/b3.png";
 import pbg from "../Images/Pbg.jpg";
 import pastor from "../Images/pastor.png";
+import pastorWife from "../Images/pastorswife.jpeg"
 import belief from "../Images/belief.png";
 import event from "../Images/event.jpg";
 import event1 from "../Images/event1.jpg";
@@ -14,8 +15,29 @@ import { animationOne, transition } from "../Components/Animation";
 import HomeSlider from "../Components/HomeSlider";
 import Navbar from "../Components/Navbar";
 import { HomeBox, Sermon } from "../Components/SubComponents";
+import useGetYouTubeVideo  from "../Components/useYouTubeVideo"
+import {useEffect} from 'react'
+import { useState } from "react/cjs/react.development";
+
+import Preloader from "../Components/Preloader"
+import useAxios from "../Components/useAxios";
+
 
 const Home = () => {
+
+  // const { youtubeVideosData , isPending ,error} = useGetYouTubeVideo(3);
+// will chnge it when ready to show
+  const [isPending] =useState(true)
+    const [youtubeVideosData,setYoutubeVideosData] = useState([])
+    const [error,setError] =useState(false)
+    
+
+
+  const{"axiosError":churchError,"axiosIspending":isChurchDataLoading,"axiosData":churchData,"axiosErrorMessage":churchErrorMessage } =useAxios('church-detail/');
+  const{"axiosError":missionError,"axiosIspending":isMissionLoading,"axiosData":missionData,"axiosErrorMessage":missionErrorMessage } =useAxios('mission-detail/');
+
+  console.log(missionData)
+    
   return (
     <motion.div
       initial="out"
@@ -24,6 +46,26 @@ const Home = () => {
       variants={animationOne}
       transition={transition}
     >
+
+     <Preloader show={(isChurchDataLoading&&isMissionLoading)?true:false} />
+
+<Link to="/give">
+<i class="marko-giveIcon fas fa-gifts"
+style={{
+  position:"fixed",
+  bottom:"30px",
+  color:"white",
+  "padding":".5rem",
+  backgroundColor:"#080b4b",
+  borderRadius:"50%",
+  "cursor":"pointer",
+  textAlign:"center"
+  
+}}
+><span style={{'display':"block","padding":".1rem"}}>Give</span></i>
+
+</Link>
+
       <Navbar />
       <HomeSlider />
 
@@ -53,22 +95,31 @@ const Home = () => {
 
       <div className="myContainer mt-10">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          <HomeBox
-            bImage={b1}
-            bTitle="Our Church"
-            bDes="Our church is open and friendly with many social activities. To keep our church running smoothly, we have committees anyone can join"
-          />
 
-          <HomeBox
+        {churchData.length!=0?<HomeBox
+            bImage={b1}
+            bTitle={churchData.heading}
+            bDes={churchData.content[0].paragraph}
+            linkTo={"/about"}
+
+          />:""}
+          
+        {
+          missionData.length!=0?<HomeBox
             bImage={b2}
-            bTitle="Our Mission"
-            bDes="To make heaven. To take as many people with us. To have a member of RCCG in every family of all nations. To accomplish No. 1 above, holiness will be ourlifestyle."
-          />
+            bTitle={missionData.heading}
+            bDes={missionData.content.slice(0,4).map(data=>data.paragraph)}
+            linkTo={"/about"}
+          />:""
+        }
+          
           <HomeBox
             bImage={b3}
             bTitle="Join a Group"
             bDes="If you wish to become a part of our church or a volunteer to help those in need, our community is awaiting you with our open hearts."
-          />
+            linkTo={"/departments"}
+         
+         />
         </div>
       </div>
 
@@ -81,13 +132,25 @@ const Home = () => {
         <div className="myContainer">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             <div className="col-span-2 flex flex-col lg:flex-row relative">
-              <img
-                src={pastor}
-                alt="pastor"
-                className="w-28 h-28 lg:-mr-6 z-10"
-              />
+             
               <div className="bg-black py-7 px-8 lg:px-14 text-left rounded-3xl">
-                <h3 className="text-white text-3xl">Anthony Arro</h3>
+           
+<div style={{'display':"flex"}}>
+<img
+src={pastor}
+alt="pastor"
+className="w-28 h-28 lg:-mr-6 z-10"
+/>
+{/* <img
+src={pastorWife}
+alt="pastor"
+className="w-28 h-28 lg:-mr-6 z-10 rounded-3xl"
+/> */}
+    <div class="">
+        <img class="w-28 h-28 object-cover rounded-full border-2 border-black-500" src={pastorWife}/>
+    </div>
+</div>
+                   <h3 className="text-white text-3xl">Mr Anthony Aro & Miss Anthony Aro</h3>
                 <h4 className="text-red-600 py-2">Senior Pastor</h4>
                 <p className="text-white text-justify">
                   At HOHP our prayer for you is that the God of all grace
@@ -98,8 +161,13 @@ const Home = () => {
                   to overcome. Furthermore, my wife and I pray that your home is
                   a reflection of the joy and peace that God has promised to all
                   of His children who follow Him.
+<br /><br />
+                  <Link to="/all-minister" className="btnOne">
+                  Read More
+                </Link>
                 </p>
               </div>
+              
             </div>
 
             <div>
@@ -134,28 +202,32 @@ const Home = () => {
           <h2 className="pb-7 font-bold text-2xl">SERMONS</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-6 gap-x-16">
           
-            <Sermon
-              topic="Thanksgiving Sunday service"
-              bText="Isaiah 61:1"
-              date="oct 3 2021"
-              vId="TDuyfbGEYSo"
-            />
-              <Sermon
-              topic="Divine advancement"
-              bText="Philippians 3:12-14"
-              date="oct 1 2021"
-              vId="ZJVivHqhauQ"
-            />
-            <Sermon
-              topic="Divine advancement"
-              bText="Philippians 3:12-14"
-              date="Sep 26 2021"
-              vId="EW9MPXW98oc"
-            />
+
+          {isPending?"":youtubeVideosData.map(data=>(
+
+<Sermon
+topic={data.title}
+bText="Isaiah 61:1"
+date={(()=>{
+
+  let date = new Date(data.datePlublished) 
+  return `${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`
+})()}
+// "oct 3 2021"
+vId={data.videoID}
+/>
+
+          ))}
+           
+            
           </div>
 
         <div className="flex justify-center mt-8">
-        <a href="https://www.youtube.com/c/RCCGHouseofHisPresenceChicago" target="_blank" rel="noreferrer" className="py-2 rounded px-3 text-lg bg-red-700 hover:bg-red-900 transition ease-in-out duration-500 text-white font-medium capitalize"><i className="fab fa-youtube pr-1"></i> Watch and comment on youtube</a>
+        {/* https://www.youtube.com/c/RCCGHouseofHisPresenceChicago */}
+        <Link to='/archive' className="py-2 rounded px-3 text-lg bg-red-700 hover:bg-red-900 transition ease-in-out duration-500 text-white font-medium capitalize">
+          {/* <i className="fab fa-youtube pr-1"></i>  */}
+        See more
+        </Link>
         </div>
         </div>
       </div>
@@ -197,7 +269,23 @@ const Home = () => {
               </div>
             </div>
 
-            <div>
+
+
+
+            <div
+                  className="bg-cover bg-center bg-no-repeat mt-5 flex justify-center items-center py-28"
+                  style={{ backgroundImage: `url(${event})` }}
+                >
+                  {" "}
+                  <Link
+                    to="/events"
+                    className="font-semibold btnOne"
+                    style={{backgroundColor:"rgb(8, 11, 75)"}}
+                  >
+                    View All Events
+                  </Link>
+                </div>
+            {/* <div>
               <div className="flex justify-center">
                 <button className="border font-semibold -mb-2 uppercase px-7 py-3 rounded-3xl text-white bg-gray-800 border-none">
                   events
@@ -209,7 +297,7 @@ const Home = () => {
                 className="w-full object-cover"
                 style={{ height: "83%" }}
               />
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
