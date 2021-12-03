@@ -28,7 +28,7 @@ const Give = () => {
             Tithes and Offering
           </h2>
           <p className="text-xl font-medium pt-1">Worship through giving</p>
-
+         
           <div className="flex justify-center">
             <div className="border mt-24 py-10 px-5 rounded bg-gray-300 text-primary">
               <p className="font-medium md:font-semibold text-3xl">
@@ -39,6 +39,22 @@ const Give = () => {
               </p>
             </div>
           </div>
+
+
+
+          <div className="flex justify-center">
+            <div className="border mt-24 py-10 px-5 rounded bg-gray-300 text-primary">
+              <p className="font-medium md:font-semibold text-3xl">
+                Want to  write a check?:{" "}
+                <span className="border-b-2 border-black">
+                PO Box 17004 Chicago IL 
+                </span>
+              </p>
+            </div>
+          </div>
+
+
+
         </div>
       </div>
     </motion.div>
