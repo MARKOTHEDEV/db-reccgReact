@@ -5,9 +5,20 @@ import heroBg3 from "../Images/hero3.jpg";
 
 const Departments = () => {
   return (
-    <div>
+    <>
       <Header bgImage={heroBg3} homeTitle="All Departments" />
-      <DepList
+
+
+
+
+
+
+      <section class=" mx-auto   px-4 sm:px-6 lg:px-4 py-12" style={{backgroundColor:"#ccf6ff"}}>
+  
+
+        <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-6">
+
+        <DepList
         title="ROYAL AMBASSADORS (USHERING)"
         desc=" The Ushering Department’s core responsibility is to ensure and maintain orderliness and peace in the church; thereby creating an atmosphere that is conducive to the move of the Holy Ghost and which God Himself would be proud of."
       />
@@ -81,7 +92,22 @@ const Departments = () => {
         title="SECURITY DEPARTMENT"
         desc=" The Security Department of RCCG House of His presence maintains safety for all members and visitors while attending services.The Security Department patrols the parking lot and surrounding streets to ensure safety.The Security Department also monitors all activities during service and is responsible for securing of the church building after each service."
       />
-    </div>
+        </div>
+        
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+    </>
   );
 };
 
@@ -89,3 +115,10 @@ export default Departments;
 
 // child comp
 
+
+
+
+// <div>
+//       <Header bgImage={heroBg3} homeTitle="All Departments" />
+ 
+//     </div>
