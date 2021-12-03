@@ -1,9 +1,12 @@
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import slider1 from "../Images/RCCG WEBSITE SLIDES 1.jpg";
-import slider2 from "../Images/RCCG WEBSITE SLIDES 2.jpg";
-import slider3 from "../Images/RCCG WEBSITE SLIDES 3.jpg";
+import slider1 from "../Images/RCCG WEBSITE SLIDES 1.png";
+import slider2 from "../Images/RCCG WEBSITE SLIDES 2.png";
+import slider3 from "../Images/RCCG WEBSITE SLIDES 3.png";
+import useAxios from "./useAxios";
+import Preloader from "../Components/Preloader"
+
 
 function SampleNextArrow(props) {
   const { style } = props;
@@ -19,42 +22,37 @@ const HomeSlider = () => {
   let settings = {
     className: "",
     infinite: true,
-    speed: 4000,
+    speed: 7000,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 7000,
+    autoplaySpeed: 3000,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
   };
 
+ 
+
+  const {   "axiosError":sliderError,"axiosIspending":isSliderLoading,"axiosData":silderData,"axiosErrorMessage":sliderErrorMessage } =useAxios('all-sliders/');
+  
   return (
     <div className="text-white">
+     <Preloader show={isSliderLoading?true:false} />
       <Slider {...settings}>
-        <div>
+        
+        {isSliderLoading==false && silderData.length!=0?silderData.map(({image})=>{
+
+          return(
+            <div>
           <img
-            src={slider1}
+            src={image}
             alt="rccg"
             className="w-full"
             style={{ height: "80vh" }}
           />
         </div>
-        <div>
-          <img
-            src={slider2}
-            alt="rccg"
-            className="w-full"
-            style={{ height: "80vh" }}
-          />
-        </div>
-        <div>
-          <img
-            src={slider3}
-            alt="rccg"
-            className="w-full"
-            style={{ height: "80vh" }}
-          />
-        </div>
+          )
+        }):""}
       </Slider>
     </div>
   );
