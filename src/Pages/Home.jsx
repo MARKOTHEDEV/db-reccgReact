@@ -196,7 +196,7 @@ src={pastorAndWifeData.pastor_wife_image}/>
       </div>
 
       {/* sermon */}
-      <div className="pt-16 pb-6 mt-14" style={{ backgroundColor: "#FF4370" }}>
+      <div className="pt-16 pb-6 mt-14" style={{ backgroundColor: "#bdcdff" }}>
         <div className="myContainer">
           <h2 className="pb-7 font-bold text-2xl">SERMONS</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-6 gap-x-16">
