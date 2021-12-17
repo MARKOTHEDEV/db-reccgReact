@@ -5,8 +5,14 @@ import about from "../Images/about.jpg";
 import about1 from "../Images/hero3.jpg";
 import { motion } from "framer-motion";
 import { animationOne, transition } from "../Components/Animation";
+import { Link } from "react-router-dom";
+import useAxios from "../Components/useAxios";
 
 const About = () => {
+
+  const{"axiosError":churchError,"axiosIspending":isChurchDataLoading,"axiosData":churchData,"axiosErrorMessage":churchErrorMessage } =useAxios('church-detail/');
+  const{"axiosError":missionError,"axiosIspending":isMissionLoading,"axiosData":missionData,"axiosErrorMessage":missionErrorMessage } =useAxios('mission-detail/');
+  const{"axiosError":believeError,"axiosIspending":isbelieveLoading,"axiosData":believeData,"axiosErrorMessage":believeErrorMessage } =useAxios('belief-detail/');
   return (
     <motion.div
       initial="out"
@@ -27,21 +33,23 @@ const About = () => {
         }}
       >
         <div className="myContainer">
+          {
+            churchData.length!=0?(
           <div className="grid grid-cols-1 lg:grid-cols-3">
             <div></div>
             <div
               className="col-span-2 rounded-3xl py-10 px-7 text-white"
               style={{ backgroundColor: "#00000055" }}
             >
-              <h3 className="font-semibold text-2xl pb-2">Our Church</h3>
-              <p>
-                We have a strong sense of community with parishioners. People
-                and children of all ages here are encouraged to learn about
-                their own faith and the role of the church in our community and
-                worldwide.
-              </p>
+              <h3 className="font-semibold text-2xl pb-2">{churchData.heading}</h3>
+              {
+                churchData.content.map(data=><p>{data.paragraph}</p>)
+              }
             </div>
           </div>
+
+            ):""
+          }
         </div>
       </div>
 
@@ -55,75 +63,52 @@ const About = () => {
           backgroundSize: "cover",
         }}
       >
+
+        
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-0 text-white">
-          <div className="bg-black p-5">
-            <h3 className="font-semibold text-2xl pb-2">MISSION</h3>
+         
+        {
+           missionData.length!=0 ?
+           
+
+           <div className="bg-black p-5">
+            <h3 className="font-semibold text-2xl pb-2">{missionData.heading}</h3>
             <ul>
-              <li>To make heaven.</li>
-              <li>To take as many people with us.</li>
-              <li>To have a member of RCCG in every family of all nations.</li>
-              <li>
-                To accomplish No. 1 above, holiness will be our lifestyle.
-              </li>
-              <li>
-                {" "}
-                To accomplish No. 2 and 3 above, we will plant churches within
-                five minutes walking distance in every city and town of
-                developing countries and within five minutes driving distance in
-                every city and town of developed countries.
-              </li>
-              <li>
-                {" "}
-                We will pursue these objectives until every Nation in the world
-                is reached for the Lord Jesus Christ
-              </li>
+                {missionData.content.map(content=>(
+                    <li key={content.id}>{content.paragraph}</li>
+                ))}
             </ul>
 
-            <div className="flex justify-end">
-              <button className="btnTwo mt-3">
-                Read More
-              </button>
-            </div>
+           
           </div>
+           
+           :""
+        }
+          
 
           <div></div>
 
           <div></div>
+        
+        {
+          believeData.length !=0?
+          <div className="bg-black p-5 text-justify" >
+          <h3 className="font-semibold text-2xl pb-2 text-right">
+            {believeData.heading}
+          </h3>
+          <ul>
+              {believeData.content[0].paragraph}
+          
+          </ul>
 
-          <div className="bg-black p-5 text-justify">
-            <h3 className="font-semibold text-2xl pb-2 text-right">
-              OUR BELIEFS
-            </h3>
-            <ul>
-              <li>
-                {" "}
-                Bible Teaching We believe that the entire Scripture, both Old
-                and New Testament are written by the inspiration of the Holy
-                Spirit – II Tim. 3:16-17. All the Christian teachings and the
-                Christian attitude of the Children of God are such as are
-                established in the Holy Bible – II Tim.3:10-15;II Peter
-                1:21;John 17:17;Ps.119:105.
-              </li>
-              <li>
-                {" "}
-                We believe that the Bible is the written and revealed Will of
-                God. Man’s position to God, the way to obtain salvation, woe and
-                destruction awaiting sinners that refuse to repent and
-                everlasting joy that is kept for the born again souls.All the
-                Bible teachings are holy, what the Bible reveals as the will of
-                God are such that we should accept, and whatever God writes in
-                the Bible and His Law are to remain unchangeable; for the
-                Heavens and Earth may pass away but the Word of God stands
-                forever. Deut. 4:22; Rev. 22:18, 19;Matt.24:34-38.
-              </li>
-            </ul>
-
-            <div className="flex justify-end">
-              <button className="btnTwo mt-2">
-                Read More
-              </button>
-            </div>
+          <div className="flex justify-end">
+            <Link  to={`/our-beliefs/${ believeData.id}`} className="btnTwo mt-2">
+              Read More
+            </Link>
           </div>
+        </div>:""
+        }
+         
         </div>
       </div>
     </motion.div>

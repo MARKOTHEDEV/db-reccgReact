@@ -12,6 +12,7 @@ import WorkProgress from "./Pages/WorkProgress";
 import VideoArchive from './Pages/VideoArchive';
 import AllMinisters from './Pages/AllMinisters';
 import Gallery from './Pages/Gallery';
+import OurBeliefDetail from "./Pages/OurBeliefDetail";
 
 function App() {
   let location = useLocation();
@@ -29,6 +30,7 @@ function App() {
        <Route path="/archive" component={VideoArchive}/>
        <Route path="/all-minister" component={AllMinisters } />
        <Route path={'/gallery'} component={Gallery} />
+       <Route path={'/our-beliefs/:id'} component={OurBeliefDetail} />
        <Route><NotFoundPage/></Route>
      </Switch>
    </Layout>

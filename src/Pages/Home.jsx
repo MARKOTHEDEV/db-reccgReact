@@ -25,18 +25,19 @@ import useAxios from "../Components/useAxios";
 
 const Home = () => {
 
-  // const { youtubeVideosData , isPending ,error} = useGetYouTubeVideo(3);
+  const { youtubeVideosData , isPending ,error} = useGetYouTubeVideo(3);
 // will chnge it when ready to show
-  const [isPending] =useState(true)
-    const [youtubeVideosData,setYoutubeVideosData] = useState([])
-    const [error,setError] =useState(false)
+  // const [isPending] =useState(true)
+  //   const [youtubeVideosData,setYoutubeVideosData] = useState([])
+  //   const [error,setError] =useState(false)
     
 
 
-  const{"axiosError":churchError,"axiosIspending":isChurchDataLoading,"axiosData":churchData,"axiosErrorMessage":churchErrorMessage } =useAxios('church-detail/');
-  const{"axiosError":missionError,"axiosIspending":isMissionLoading,"axiosData":missionData,"axiosErrorMessage":missionErrorMessage } =useAxios('mission-detail/');
+const{"axiosError":churchError,"axiosIspending":isChurchDataLoading,"axiosData":churchData,"axiosErrorMessage":churchErrorMessage } =useAxios('church-detail/');
+const{"axiosError":missionError,"axiosIspending":isMissionLoading,"axiosData":missionData,"axiosErrorMessage":missionErrorMessage } =useAxios('mission-detail/');
+const{"axiosError":pastorAndWifeError,"axiosIspending":ispastorAndWifeLoading,"axiosData":pastorAndWifeData,"axiosErrorMessage":pastorAndWifeErrorMessage } =useAxios('getFrontPagePastorData/');
 
-  console.log(missionData)
+console.log(pastorAndWifeData)
     
   return (
     <motion.div
@@ -47,7 +48,7 @@ const Home = () => {
       transition={transition}
     >
 
-     <Preloader show={(isChurchDataLoading&&isMissionLoading)?true:false} />
+     <Preloader show={(isChurchDataLoading&&isMissionLoading&&ispastorAndWifeLoading)?true:false} />
 
 <Link to="/give">
 <i class="marko-giveIcon fas fa-gifts"
@@ -55,11 +56,11 @@ style={{
   position:"fixed",
   bottom:"30px",
   color:"white",
-  "padding":".5rem",
+  "padding":".5rem",left:"30px",
   backgroundColor:"#080b4b",
   borderRadius:"50%",
   "cursor":"pointer",
-  textAlign:"center"
+  textAlign:"center",zIndex:"1000","transform":"scale(1.7,1.7)"
   
 }}
 ><span style={{'display':"block","padding":".1rem"}}>Give</span></i>
@@ -132,41 +133,37 @@ style={{
         <div className="myContainer">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             <div className="col-span-2 flex flex-col lg:flex-row relative">
-             
-              <div className="bg-black py-7 px-8 lg:px-14 text-left rounded-3xl">
+             {
+               pastorAndWifeData.length!=0?(
+
+
+                  <div className="bg-black py-7 px-8 lg:px-14 text-left rounded-3xl">
            
-<div style={{'display':"flex"}}>
-<img
-src={pastor}
-alt="pastor"
-className="w-28 h-28 lg:-mr-6 z-10"
-/>
-{/* <img
-src={pastorWife}
-alt="pastor"
-className="w-28 h-28 lg:-mr-6 z-10 rounded-3xl"
-/> */}
-    <div class="">
-        <img class="w-28 h-28 object-cover rounded-full border-2 border-black-500" src={pastorWife}/>
-    </div>
-</div>
-                   <h3 className="text-white text-3xl">Mr Anthony Aro & Miss Anthony Aro</h3>
-                <h4 className="text-red-600 py-2">Senior Pastor</h4>
-                <p className="text-white text-justify">
-                  At HOHP our prayer for you is that the God of all grace
-                  anoints you with fresh oil and His precious Spirit illuminates
-                  the Word as you read. May He empower you to effectively
-                  communicate to others the vibrant hope that He has given you
-                  to persevere the struggles that you have overcome and continue
-                  to overcome. Furthermore, my wife and I pray that your home is
-                  a reflection of the joy and peace that God has promised to all
-                  of His children who follow Him.
-<br /><br />
-                  <Link to="/all-minister" className="btnOne">
-                  Read More
-                </Link>
-                </p>
+                                <div style={{'display':"flex"}}>
+                                          <img
+                                          src={pastorAndWifeData.pastor_image}
+                                          alt="pastor"
+                                          className="w-28 h-28 lg:-mr-6 z-10"
+                                          />
+
+                                              <div class="">
+                                                  <img class="w-28 h-28 object-cover rounded-full border-2 border-black-500" 
+                                                  src={pastorAndWifeData.pastor_wife_image}/>
+                                              </div>
+                                </div>
+                                  <h3 className="text-white text-3xl">{pastorAndWifeData.header}</h3>
+                                <h4 className="text-red-600 py-2">Senior Pastor</h4>
+                                <p className="text-white text-justify">
+                                                      {pastorAndWifeData.content}
+                                    <br /><br />
+                                                      <Link to="/all-minister" className="btnOne">
+                                                      Read More
+                                                    </Link>
+                                </p>
               </div>
+               ):""
+             }
+             
               
             </div>
 
