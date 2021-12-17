@@ -89,11 +89,11 @@ const Navbar = () => {
             <span className="block font-light">ADDRESS:</span>
             <span>5151 S Princeton Ave Chicago IL</span> <br />
           </div>
-          <div>
+          {/* <div>
             <span className="block font-light">PO Box:</span>
             <span>PO Box 17004 Chicago IL</span>
 
-          </div>
+          </div> */}
         </div>
       </div>
       <nav

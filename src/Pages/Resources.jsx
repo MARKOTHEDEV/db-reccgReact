@@ -39,9 +39,9 @@ isResourceDataLoading==false && ResourceData.length!=0?ResourceData.map((data)=>
           {data.content}
         </p>
   </div>
-  <div class="flex justify-end mt-4">
+  {/* <div class="flex justify-end mt-4">
       <a  class="text-xl font-medium text-indigo-500">John Doe</a>
-  </div>
+  </div> */}
   </div>
 
 ))

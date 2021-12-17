@@ -143,12 +143,14 @@ style={{
                                           <img
                                           src={pastorAndWifeData.pastor_image}
                                           alt="pastor"
+
                                           className="w-28 h-28 lg:-mr-6 z-10"
                                           />
 
                                               <div class="">
                                                   <img class="w-28 h-28 object-cover rounded-full border-2 border-black-500" 
-                                                  src={pastorAndWifeData.pastor_wife_image}/>
+                                          // style={{scale:".4"}}
+src={pastorAndWifeData.pastor_wife_image}/>
                                               </div>
                                 </div>
                                   <h3 className="text-white text-3xl">{pastorAndWifeData.header}</h3>
