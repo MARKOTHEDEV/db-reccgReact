@@ -250,7 +250,7 @@ vId={data.videoID}
                     to="/events"
                     className="font-semibold btnOne"
                   >
-                    READ MORE
+                    See Events
                   </Link>
                 </div>
                 <div
@@ -259,10 +259,10 @@ vId={data.videoID}
                 >
                   {" "}
                   <Link
-                    to="/events"
+                    to="/sermons"
                     className="font-semibold btnOne"
                   >
-                    READ MORE
+                    Read Our Sermons
                   </Link>
                 </div>
               </div>

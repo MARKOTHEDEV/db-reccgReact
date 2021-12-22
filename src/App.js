@@ -13,7 +13,8 @@ import VideoArchive from './Pages/VideoArchive';
 import AllMinisters from './Pages/AllMinisters';
 import Gallery from './Pages/Gallery';
 import OurBeliefDetail from "./Pages/OurBeliefDetail";
-
+import SermonList from "./Pages/SermonList";
+import SermonDetails from "./Pages/SermonDetails";
 function App() {
   let location = useLocation();
   return (
@@ -31,6 +32,9 @@ function App() {
        <Route path="/all-minister" component={AllMinisters } />
        <Route path={'/gallery'} component={Gallery} />
        <Route path={'/our-beliefs/:id'} component={OurBeliefDetail} />
+       <Route path={'/sermons'} component={SermonList} />
+       <Route path={'/sermonsDetail/:pk'} component={SermonDetails} />
+
        <Route><NotFoundPage/></Route>
      </Switch>
    </Layout>
