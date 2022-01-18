@@ -4,6 +4,8 @@ import pbg from "../Images/Pbg.jpg";
 import belief from "../Images/belief.png";
 import useAxios from "../Components/useAxios";
 import Preloader from "../Components/Preloader"
+import Header from "../Components/Header";
+import heroBg3 from "../Images/hero3.jpg";
 
 
 const AllMinisters = ()=>{
@@ -14,6 +16,8 @@ const AllMinisters = ()=>{
     return (
 
 <>
+<Header bgImage={heroBg3} homeTitle="See All Our Ministers" />
+
       <Preloader show={isMinisterDataLoading?true:false} />
 
 

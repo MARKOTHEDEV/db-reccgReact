@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Header from "../Components/Header";
 import heroBg3 from "../Images/hero3.jpg";
@@ -10,7 +10,7 @@ import useAxios from "../Components/useAxios";
 const Resources = () => {
 
   const{"axiosError":ResourceError,"axiosIspending":isResourceDataLoading,"axiosData":ResourceData,"axiosErrorMessage":ResourceErrorMessage } =useAxios('resource/');
-
+  const [readmore,setReadMore] =useState(false)
   return (
     <motion.div
     initial="out"
@@ -36,8 +36,12 @@ isResourceDataLoading==false && ResourceData.length!=0?ResourceData.map((data)=>
   <div>
       <h2 class="text-gray-800 text-3xl font-semibold">{data.heading} </h2>
       <p class="mt-2 text-gray-600">
-          {data.content}
+          {/* {data.content} */}
+          {readmore?data.content:`${data.content.slice(0,200)}.....`}
+
         </p>
+        {/* <p>//////{readmore}</p> */}
+        <a style={{cursor:"pointer"}}  onClick={(e)=>setReadMore(!readmore)}>Read More</a>
   </div>
   {/* <div class="flex justify-end mt-4">
       <a  class="text-xl font-medium text-indigo-500">John Doe</a>

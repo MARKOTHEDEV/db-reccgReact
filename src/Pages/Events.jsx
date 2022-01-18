@@ -7,7 +7,7 @@ import event2 from "../Images/event2.jpg";
 import event from "../Images/event.jpg";
 import { motion } from "framer-motion";
 import useAxios from "../Components/useAxios";
-
+import CardWithImage from "../Components/CardWithImage";
 const Events = () => {
 
   const{"axiosError":EventsError,"axiosIspending":isEventsDataLoading,"axiosData":EventsData,"axiosErrorMessage":EventsErrorMessage } =useAxios('all-events/');
@@ -16,46 +16,53 @@ console.log(EventsData)
       <>
         <Header bgImage={heroBg3} homeTitle="Check Out All Our Events" />
 
+        {/* <CardWithImage />
+        <CardWithImage /> */}
 
 
               <br />
-        <div class="flex flex-wrap -mx-2 mb-8" style={{padding:"1rem"}}>
-          
+        {/* <div class="flex flex-wrap -mx-2 mb-8" style={{padding:"1rem"}}> */}
+        <section 
+        // class="m-2 font-sans leading-normal flex"
+        style={{display:"flex",flexWrap:"wrap"}}
+        >
+
             {
               EventsData.length !=0?
                 EventsData.map(data=>(
+                  <CardWithImage data={data} />
 
-                  <motion.div class={`w-full md:w-1/2 lg:w-1/4  mb-4`} whileTap={{scale:".8"}} style={{
-                    cursor:"pointer"
-                    ,'transition':"all .7s ease-in-out",'position':'relative','overflow':"hidden",
-                    borderRadius:"40px"
+    //               <motion.div class={`w-full md:w-1/2 lg:w-1/4  mb-4`} whileTap={{scale:".8"}} style={{
+    //                 cursor:"pointer"
+    //                 ,'transition':"all .7s ease-in-out",'position':'relative','overflow':"hidden",
+    //                 borderRadius:"40px"
                     
                     
-                    }}>
-                      {/* cover */}
-                      <div style={{position:"absolute",top:'0',left:'0','width':"100%",
+    //                 }}>
+    //                   {/* cover */}
+    //                   <div style={{position:"absolute",top:'0',left:'0','width':"100%",
                       
-                        height:"100%",
-                        background: "rgb(0,0,0)",padding:"0",
-    background: " linear-gradient(0deg, rgba(0,0,0,0.6670868176372111) 32%, rgba(255,255,255,0.2553221117548582) 85%)"
-                    }}></div>
-                    <img src={data.image} alt=""   
-    style={{
-                      width:"100%",height:"100%"
-                      // ,borderRadius:"30px",
+    //                     height:"100%",
+    //                     background: "rgb(0,0,0)",padding:"0",
+    // background: " linear-gradient(0deg, rgba(0,0,0,0.6670868176372111) 32%, rgba(255,255,255,0.2553221117548582) 85%)"
+    //                 }}></div>
+    //                 <img src={data.image} alt=""   
+    // style={{
+    //                   width:"100%",height:"100%"
+    //                   // ,borderRadius:"30px",
                     
     
     
-                    }} />
-                    <h1 className=" text-2xl  "
-                     style={{position:"absolute",bottom:'20%',color:'white',width:"94%",padding:"0 .5rem"}}
-                     >
-                     {data.name}
+    //                 }} />
+    //                 <h1 className=" text-2xl  "
+    //                  style={{position:"absolute",bottom:'20%',color:'white',width:"94%",padding:"0 .5rem"}}
+    //                  >
+    //                  {data.name}
                      
                      
-                     </h1>
+    //                  </h1>
     
-                  </motion.div>
+    //               </motion.div>
                 ))
              
              :""
@@ -63,7 +70,7 @@ console.log(EventsData)
               
               
              
-   </div>
+        </section>
 
 
 
