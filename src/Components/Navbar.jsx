@@ -40,8 +40,16 @@ const Navbar = () => {
           </svg>
           <div>
             <span className="block font-light">Call us :</span>
-            <a href="tel:+1 807 769 1710" className="hover:text-neutral">
-              +1 807 769 1710
+            <a href="+1 313 502 8164" className="hover:text-neutral">
+            <strong>
+            +1 313 502 8164 (Main)
+            </strong>
+            </a>
+<br />
+             <a href="+1 872 724 9130" className="hover:text-neutral">
+            <strong>
+            +1 872 724 9130 
+            </strong>
             </a>
           </div>
         </div>

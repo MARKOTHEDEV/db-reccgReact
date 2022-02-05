@@ -178,11 +178,21 @@ const Contact = () => {
                 </h3>
                 <div className="text-gray-200 font-medium tracking-wide text-lg">
                   <a
-                    href="tel: +1 807 769 1710"
+                    href="tel: +1 313 502 8164"
                     className="block pt-2 hover:text-secondary"
                   >
-                    +1 807 769 1710
+                    +1 313 502 8164 (Main)
                   </a>
+
+                  {/* <br /> */}
+                  <a
+                    href="tel: +1 872 724 9130 "
+                    className="block pt-2 hover:text-secondary"
+                  >
+                    +1 872 724 9130 
+                  </a>
+
+
                 </div>
               </div>
 
